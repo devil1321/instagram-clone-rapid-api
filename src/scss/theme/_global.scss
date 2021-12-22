@@ -1,0 +1,9 @@
+@import './normalize';
+@import './fonts';
+@import './variables';
+@import './mixins';
+
+body{
+    background-color: #f9f9f9;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
