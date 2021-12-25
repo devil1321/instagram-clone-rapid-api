@@ -5,7 +5,9 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ./dist/server.js"
+    "start": "node ./dist/server.js",
+    "start-dev": "nodemon ./dist/server.js",
+    "remotedev": "remotedev --hostname=localhost --port=9000"
   },
   "repository": {
     "type": "git",
@@ -20,12 +22,22 @@
   "dependencies": {
     "@types/ejs": "^3.1.0",
     "@types/node": "^17.0.2",
+    "axios": "^0.24.0",
+    "cookie-session": "^2.0.0",
     "dotenv": "^10.0.0",
     "ejs": "^3.1.6",
     "express": "^4.17.2",
     "gsap": "^3.9.0",
     "passport": "^0.5.2",
+    "passport-instagram": "^1.0.0",
     "redux": "^4.1.2",
+    "redux-devtools-extension": "^2.13.9",
+    "redux-thunk": "^2.4.1",
     "typescript": "^4.5.4"
+  },
+  "devDependencies": {
+    "kill-port": "^1.6.1",
+    "remote-redux-devtools": "^0.5.16",
+    "remotedev-server": "^0.3.1"
   }
 }

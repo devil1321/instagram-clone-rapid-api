@@ -7,7 +7,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
+        <title>Instagram | <%= title %></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link onload="this.rel='stylesheet'" as="stylesheet" rel="stylesheet" href="/public/css/login.css">
@@ -30,14 +30,14 @@
                 <div class="login__main-content">
                     <div class="login__form-wrapper">
                         <h1>Instagram</h1>
-                        <form class="login__form">
+                        <form class="login__form" action="/instagram/auth/authorize">
                             <input type="text" placeholder="Phone number, username, or email">
-                            <input type="text" placeholder="Password">
+                            <input type="password" placeholder="Password">
                             <button>Log In</button>
-                            <div class="login__form-divider">
-                                <div class="login__line"></div>
+                            <div class="divider">
+                                <div class="line"></div>
                                 <span>Or</span>
-                                <div class="login__line"></div>
+                                <div class="line"></div>
                             </div>
                             <div class="login__fb">
                                 <i class="fab fa-facebook-f"></i>
@@ -48,20 +48,19 @@
                     </div>
                     <div class="login__sign-up">
                         <p>Don`t have an account</p>
-                        <a href="/auth/sign-up">Sign Up</a>
+                        <a href="/instagram/auth/sign-up">Sign Up</a>
                     </div>
                     <p class="login__get-app">Get the app</p>
-                    <div class="login__btns-group">
-                        <div class="login__btn-wrapper">
+                    <div class="btns-group">
+                        <div class="btn-wrapper">
                             <img src="/public/assets/play-store-btn.png" alt="" class="login__btn">
                         </div>
-                        <div class="login__btn-wrapper">
+                        <div class="btn-wrapper">
                             <img src="/public/assets/google-play-btn.png" alt="" class="login__btn">
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <script src="../dist/js/carousel.ts" async defer></script>
     </body>
 </html>

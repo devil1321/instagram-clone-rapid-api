@@ -2,7 +2,9 @@
 .login{
     @include createFlex(row,center,flex-start,null);
     h1{
-        font-family:'Billabong'
+        font-family:'Billabong';
+        font-size:80px;
+        font-weight: 300;
     }
     &__carousel{
         position: relative;
@@ -86,47 +88,24 @@
         @include createFlex(column,flex-start,center,null);
         border-radius: 2px;
 
-        h1{
-            font-size:80px;
-            font-weight: 300;
-        }
+        
     }
     &__form{
         width: 70%;
         margin-top:-30px;
         @include createFlex(column,flex-start,flex-start,null);
         input{
-            padding-left:10px;
-            margin:5px 0px;
-            width: 100%;
-            height:40px;
-            box-shadow: 0px 0px 1px grey;
-            border:0px;
-            border-radius: 2px;
+           @include input();
         }
         button{
-            margin:10px 0px;
-            height:40px;
-            width: 105%;
-            font-weight: bold;
-            background-color: rgb(128, 239, 243);
-            color:white;
-            border:0px;
-            border-radius: 5px;
+            @include blue-btn()
         }
         p{
             width: 105%;
             @include createFlex(row,center,center,null);
         }
     }
-    &__form-divider{
-        width: 105%;
-        @include createFlex(row,space-between,center,null);
-    }
-    &__line{
-        border-bottom:1px solid lightgray;
-        width: 110px;
-    }
+    @include or-divider();
     &__fb{
         margin:10px 0px;
         width: 105%;
@@ -157,18 +136,5 @@
         width: 60%;
         text-align: center;
     }
-    &__btns-group{
-        width: 60%;
-        margin:0px auto;
-        margin-left:20px;
-        @include createFlex(row,center,center,null);
-    }
-    &__btn-wrapper{
-        margin-right: 10px;
-        width: 180px;
-        height:50px;
-        img{
-            width: 100%;
-        }
-    }
+   @include btn-group();
 }

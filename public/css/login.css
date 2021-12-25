@@ -369,6 +369,8 @@ body {
 
 .login h1 {
   font-family: 'Billabong';
+  font-size: 80px;
+  font-weight: 300;
 }
 
 .login__carousel {
@@ -522,11 +524,6 @@ body {
   border-radius: 2px;
 }
 
-.login__form-wrapper h1 {
-  font-size: 80px;
-  font-weight: 300;
-}
-
 .login__form {
   width: 70%;
   margin-top: -30px;
@@ -552,8 +549,13 @@ body {
   height: 40px;
   -webkit-box-shadow: 0px 0px 1px grey;
           box-shadow: 0px 0px 1px grey;
-  border: 0px;
+  border: 1px solid white;
   border-radius: 2px;
+}
+
+.login__form input:focus {
+  outline: none;
+  border: 1px solid lightgray;
 }
 
 .login__form button {
@@ -584,7 +586,7 @@ body {
           align-items: center;
 }
 
-.login__form-divider {
+.login .divider {
   width: 105%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -601,9 +603,9 @@ body {
           align-items: center;
 }
 
-.login__line {
+.login .line {
   border-bottom: 1px solid lightgray;
-  width: 110px;
+  min-width: 110px;
 }
 
 .login__fb {
@@ -666,7 +668,7 @@ body {
   text-align: center;
 }
 
-.login__btns-group {
+.login .btns-group {
   width: 60%;
   margin: 0px auto;
   margin-left: 20px;
@@ -685,13 +687,13 @@ body {
           align-items: center;
 }
 
-.login__btn-wrapper {
+.login .btn-wrapper {
   margin-right: 10px;
   width: 180px;
   height: 50px;
 }
 
-.login__btn-wrapper img {
+.login .btn-wrapper img {
   width: 100%;
 }
 /*# sourceMappingURL=login.css.map */
