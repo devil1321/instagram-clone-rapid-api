@@ -18,7 +18,7 @@ class IG_USERS_ACTIONS {
         this.unfollow = {}
     }
     
-    getUser(username: string) {
+    async getUser(username: string) {
         var options:any = {
             method: 'GET',
             url: 'https://instagram-unofficial.p.rapidapi.com/get-user',
@@ -30,13 +30,13 @@ class IG_USERS_ACTIONS {
                 }
             };
 
-            axios.request(options).then(function (response) {
+            await axios.request(options).then(function (response) {
                 this.user = response.data
             }).catch(function (error) {
                 console.error(error);
             });
     }
-    getUserFollowers(username:string,user_id:string,max_id:string){
+    async getUserFollowers(username:string,user_id:string,max_id:string){
         var options:any = {
             method: 'GET',
             url: 'https://instagram-unofficial.p.rapidapi.com/user-followers',
@@ -52,13 +52,13 @@ class IG_USERS_ACTIONS {
             }
         };
 
-        axios.request(options).then(function (response) {
+        await axios.request(options).then(function (response) {
             this.followers = response.data
         }).catch(function (error) {
             console.error(error);
         });
     }
-    getUserFollowing(username:string,user_id:string,max_id:string){
+    async getUserFollowing(username:string,user_id:string,max_id:string){
         var options:any = {
             method: 'GET',
             url: 'https://instagram-unofficial.p.rapidapi.com/user-following',
@@ -74,13 +74,13 @@ class IG_USERS_ACTIONS {
             }
           };
           
-          axios.request(options).then(function (response) {
+          await axios.request(options).then(function (response) {
               this.following = response.data
           }).catch(function (error) {
               console.error(error);
           });
     }
-    getLogin(username:string,password:string){
+    async getLogin(username:string,password:string){
         var options:any = {
             method: 'GET',
             url: 'https://instagram-unofficial.p.rapidapi.com/login',
@@ -91,13 +91,13 @@ class IG_USERS_ACTIONS {
             }
           };
           
-          axios.request(options).then(function (response) {
+          await axios.request(options).then(function (response) {
               global.session_key = response.data.session_key
           }).catch(function (error) {
               console.error(error);
           });
     }
-    getFollow(){
+    async getFollow(){
         var options:any = {
             method: 'GET',
             url: 'https://instagram-unofficial.p.rapidapi.com/follow',
@@ -108,13 +108,13 @@ class IG_USERS_ACTIONS {
             }
           };
           
-          axios.request(options).then(function (response) {
+          await axios.request(options).then(function (response) {
               this.follow = response.data
           }).catch(function (error) {
               console.error(error);
           });
     }
-    getUnfollow(){
+    async getUnfollow(){
         var options:any = {
             method: 'GET',
             url: 'https://instagram-unofficial.p.rapidapi.com/unfollow',
@@ -125,7 +125,7 @@ class IG_USERS_ACTIONS {
             }
           };
           
-          axios.request(options).then(function (response) {
+          await axios.request(options).then(function (response) {
               this.unfollow = response.data
           }).catch(function (error) {
               console.error(error);

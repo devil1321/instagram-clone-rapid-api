@@ -8,8 +8,11 @@ router.get('/login', (req, res) => {
 router.get('/sign-up', (req, res) => {
     res.render('signup', { title: "Sign Up" });
 });
-router.get('/authorize', (req, res) => {
+router.post('/authorize', (req, res) => {
     const { name, password } = req.body;
-    console.log(name, password);
+    IG_USERS.getLogin(name, password);
+    setTimeout(() => {
+        console.log(global.session_key);
+    }, 1000);
 });
 module.exports = router;
