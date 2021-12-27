@@ -9,9 +9,8 @@ var credentials = { key: privateKey, cert: certificate };
 const express = require('express');
 const path = require('path');
 const app = express();
-const passport = require('passport');
-const passportSetup = require('./config/passport-setup');
 const cookieSession = require('cookie-session');
+const isAuthenticated = require('./modules/isAuthenticated');
 const authRoutes = require('./routes/auth.routes');
 const instagramRoutes = require('./routes/instagram.routes');
 require('dotenv').confing;
@@ -23,13 +22,11 @@ app.use(cookieSession({
     maxAge: 24 * 60 * 60 * 1000,
     keys: [keys_1.keys.session.cookieKey]
 }));
-app.use(passport.initialize());
-app.use(passport.session());
 app.get('/', (req, res) => {
     res.redirect('/instagram/auth/login');
 });
 app.use('/instagram/auth', authRoutes);
-app.use('/instagram', instagramRoutes);
+app.use('/instagram', isAuthenticated, instagramRoutes);
 var httpsServer = https.createServer(credentials, app);
 httpsServer.listen(PORTHTTPS, (req, res) => {
     console.log('https server started at port ' + PORTHTTPS);
