@@ -1,0 +1,71 @@
+<div class="post">
+    <div class="post__header">
+        <div class="post__profile-img">
+            <img src="/public/assets/temp-profile.jpg" alt="">
+        </div>
+        <span></span>
+    </div>
+    <img src="/public/assets/temp_post_image.jpg" alt="">
+    <div class="post__info">
+        <div class="post__info-nav">
+            <div class="post__info-left-icons-group"></div>
+            <span></span>
+        </div>
+        <h3>65,675 likes</h3>
+        <p><span>natgeo</span>Photo by @williamodaniels | Bangui, Central African Republic, 2014. Chaibou Mahamat, 33, is seen in his looted home in the 5 Kilo neighborhood. After militia fighters attacked his family, his wife and child left for Cameroon, but he had not had any contact with them. His brother left too, and was later killed by the same militia, the Anti-balakas. The country has been affected by sectarian violence since 2013, through militias such as the Anti-balaka (mostly Christian) and the Seleka (mostly Muslim). I've traveled there a dozen times to report on the war, where atrocities have been committed by both sides. Follow me on @williamodaniels for more human stories around the world.</p>
+        <p class="post__comments-btn">View all 495 comments</p>
+        <p>5 hours ago</p>
+        <form>
+            <span></span>
+            <input type="text" placeholder="Add comment..."/>
+            <button type="submit">Post</button>
+        </form>
+    </div>
+    <div class="post__modal-overlay">
+        <div class="post__modal-close"></div>
+        <div class="post__modal">
+            <img src="/public/assets/temp_post_image.jpg" alt="">
+            <div class="post__modal-content">
+                <div class="post__modal-header">
+                    <div class="post__profile-img">
+                        <img src="/public/assets/temp-profile.jpg" alt="">
+                    </div>
+                    <span class="post__modal-icon"></span>
+                    <div class="post__modal-dot"></div>
+                    <span class="post__modal-menu"></span>
+                </div>
+                <div class="post__modal-main">
+                    <div class="post__profile-img">
+                        <img src="/public/assets/temp-profile.jpg" alt="">
+                    </div>
+                    <div class="post__modal-main-content">
+                        <p><span>natgeo</span><span class="post__modal-icon" ></span>Photo by @williamodaniels | Bangui, Central African Republic, 2014. Chaibou Mahamat, 33, is seen in his looted home in the 5 Kilo neighborhood. After militia fighters attacked his family, his wife and child left for Cameroon, but he had not had any contact with them. His brother left too, and was later killed by the same militia, the Anti-balakas. The country has been affected by sectarian violence since 2013, through militias such as the Anti-balaka (mostly Christian) and the Seleka (mostly Muslim). I've traveled there a dozen times to report on the war, where atrocities have been committed by both sides. Follow me on @williamodaniels for more human stories around the world.</p>
+                    </div>
+                    <span class="post__modal-load-icon"></span>
+                    <div class="post__comments-group">
+                        <% for(let i = 0; i < 20; i++){%>
+                            <%- include('comment') %>
+                        <%}%>
+                    </div>
+                    <div class="post__footer">
+                        <div class="post__footer-menu">
+                            <div class="post__footer-icon-group">
+                                <span class="post__heart-icon"></span>
+                                <span class="post__message-icon"></span>
+                                <span class="post__telegram-icon"></span>
+                            </div>
+                            <span class="post__pin-icon"></span>
+                        </div>
+                        <h3>80,089 likes</h3>
+                        <p>5 HOURS AGO</p>
+                    </div>
+                    <form action="" class="post__add-comment-modal-form">
+                        <span class="post__face-icon"></span>
+                        <input type="text" placeholder="Add comment...">
+                        <button type="submit">Post</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

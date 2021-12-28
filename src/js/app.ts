@@ -14,3 +14,26 @@ const isNavOpen = () =>{
 }
 
 navbar.addEventListener('click',isNavOpen)
+
+
+const viewComments = document.querySelector('.post__comments-btn')!
+const modal = document.querySelector('.post__modal-overlay')!
+var isModal = false
+const handleModal = ()=>{
+    if (!isModal) {
+        modal.style.visibility = 'visible'
+        modal.style.opacity = '1'
+        modal.style.zIndex = '1'
+        isModal = true;
+    }
+    else {
+        isModal = false;
+        modal.style.visibility = 'hidden'
+        modal.style.opacity = '0'
+        modal.style.zIndex = '-1'
+      
+    }
+}
+    
+
+viewComments.addEventListener('click',handleModal)

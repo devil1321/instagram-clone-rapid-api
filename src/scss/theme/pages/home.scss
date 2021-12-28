@@ -1,6 +1,28 @@
 @import '../global';
 @import '../components/navbar';
+@import '../components/card';
+@import '../components/post';
+@import '../components/comment';
 
 .home{
-  
+   padding:0px 150px;
+   @include createFlex(row,center,flex-start,null);
+  &__posts{
+      width: 65%;
+  }
+  &__carousel-wrapper{
+      width: 100%;
+      position: relative;
+      left:-10px;
+      top:0px;
+      overflow-x:hidden;
+  }
+  &__carousel{
+      height:300px;
+      @include createFlex(row,flex-start,center,null);
+    }
+    &__profile{
+
+        width: 35%;
+    }
 }

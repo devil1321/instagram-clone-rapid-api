@@ -21,6 +21,10 @@
     "include": [
         "src/**/**/*"
     ],
+    "exclude": [
+        "src/js/carousel.ts"
+    ],
+
     "files": [
         "./src/global.d.ts"
     ]
