@@ -1,5 +1,6 @@
 import axios from 'axios'
-import { keys } from '../config/keys'
+import { keys } from '../../config/keys'
+
 class IG_USERS_ACTIONS {
 
     public user: any;
@@ -17,24 +18,24 @@ class IG_USERS_ACTIONS {
         this.follow = {}
         this.unfollow = {}
     }
-    
     async getUser(username: string) {
         var options:any = {
             method: 'GET',
             url: 'https://instagram-unofficial.p.rapidapi.com/get-user',
             params: {
-                session_key: global.session_key, username: username},
+                session_key:keys.session.sessionKey, username: username},
             headers: {
                     'x-rapidapi-host': keys.rapidAPI.host,
                     'x-rapidapi-key':  keys.rapidAPI.key
                 }
             };
 
-            await axios.request(options).then(function (response) {
-                this.user = response.data
+        const data:any = await axios.request(options).then(function (response) {
+                return response.data
             }).catch(function (error) {
                 console.error(error);
             });
+            this.user = data
     }
     async getUserFollowers(username:string,user_id:string,max_id:string){
         var options:any = {
@@ -52,18 +53,19 @@ class IG_USERS_ACTIONS {
             }
         };
 
-        await axios.request(options).then(function (response) {
-            this.followers = response.data
+        const data = await axios.request(options).then(function (response) {
+           return response.data
         }).catch(function (error) {
             console.error(error);
         });
+        this.followers = data
     }
     async getUserFollowing(username:string,user_id:string,max_id:string){
         var options:any = {
             method: 'GET',
             url: 'https://instagram-unofficial.p.rapidapi.com/user-following',
             params: { 
-                session_key: global.session_key, 
+                session_key: keys.session.sessionKey, 
                 username:username,
                 user_id:user_id,
                 max_id:max_id
@@ -74,11 +76,12 @@ class IG_USERS_ACTIONS {
             }
           };
           
-          await axios.request(options).then(function (response) {
-              this.following = response.data
+          const data = await axios.request(options).then(function (response) {
+              return response.data
           }).catch(function (error) {
               console.error(error);
           });
+          this.following = data
     }
     async getLogin(username:string,password:string){
         var options:any = {
@@ -92,7 +95,11 @@ class IG_USERS_ACTIONS {
           };
           
           await axios.request(options).then(function (response) {
-              global.session_key = response.data.session_key
+              if(response.data.error){
+                  console.log(response.data.error)
+              }else{
+                  global.session_key = response.data.session_key
+              }
           }).catch(function (error) {
               console.error(error);
           });
@@ -108,11 +115,12 @@ class IG_USERS_ACTIONS {
             }
           };
           
-          await axios.request(options).then(function (response) {
-              this.follow = response.data
+          const data:any = await axios.request(options).then(function (response) {
+              return response.data
           }).catch(function (error) {
               console.error(error);
           });
+          this.follow = data
     }
     async getUnfollow(){
         var options:any = {
@@ -125,11 +133,12 @@ class IG_USERS_ACTIONS {
             }
           };
           
-          await axios.request(options).then(function (response) {
-              this.unfollow = response.data
+          const data:any = await axios.request(options).then(function (response) {
+              return response.data
           }).catch(function (error) {
               console.error(error);
           });
+          this.unfollow = data
     }
 }
 

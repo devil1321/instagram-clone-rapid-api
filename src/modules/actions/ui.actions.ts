@@ -1,9 +1,9 @@
 class UI_ACTIONS {
-    constructor() {
-        this.isMobile = false;
-        this.isNavbarOpen = false;
+    public isMobile:boolean;
+    constructor(){
+        this.isMobile = false
     }
-    setIsMobile() {
+    async setIsMobile(){
         function detectMob() {
             const toMatch = [
                 /Android/i,
@@ -14,15 +14,17 @@ class UI_ACTIONS {
                 /BlackBerry/i,
                 /Windows Phone/i
             ];
+            
             return toMatch.some((toMatchItem) => {
                 return navigator.userAgent.match(toMatchItem);
             });
         }
-        this.isMobile = detectMob();
-    }
-    setIsNavbarOpen() {
-        this.isNavbarOpen = !this.isNavbarOpen;
-    }
+        this.isMobile = await detectMob()
+    }   
 }
-const UI = new UI_ACTIONS;
-module.exports = UI;
+
+const UI = new UI_ACTIONS
+
+module.exports = UI
+
+

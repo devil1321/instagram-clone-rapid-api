@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { keys } from '../config/keys';
+import { keys } from '../../config/keys';
 
 class IG_TAGS_ACTIONS{
 
@@ -11,7 +11,7 @@ class IG_TAGS_ACTIONS{
         this.tag = {}
     }
     
-    getTagPosts(tag:string,max_id:string){
+    async getTagPosts(tag:string,max_id:string){
         var options:any = {
             method: 'GET',
             url: 'https://instagram-unofficial.p.rapidapi.com/tag-posts',
@@ -22,13 +22,14 @@ class IG_TAGS_ACTIONS{
             }
           };
           
-          axios.request(options).then(function (response) {
-              this.tagPosts = response.data
+          const data = await axios.request(options).then(function (response) {
+              return response.data
           }).catch(function (error) {
               console.error(error);
           });
+          this.tagPosts = data
     }
-    getTag(tag:string){
+    async getTag(tag:string){
         var options:any = {
             method: 'GET',
             url: 'https://instagram-unofficial.p.rapidapi.com/get-tag',
@@ -39,11 +40,12 @@ class IG_TAGS_ACTIONS{
             }
           };
           
-          axios.request(options).then(function (response) {
-              this.tag = response.data
+          const data = await axios.request(options).then(function (response) {
+              return response.data
           }).catch(function (error) {
               console.error(error);
           });
+          this.tag = data
     }
 }
 

@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { keys } from '../config/keys';
+import { keys } from '../../config/keys';
 
 class IG_STORIES_ACTIONS{
     
@@ -9,7 +9,7 @@ class IG_STORIES_ACTIONS{
         this.userStories = {}
     }
     
-    getUserStories(username:string,user_id:string){
+    async getUserStories(username:string,user_id:string){
         var options:any = {
             method: 'GET',
             url: 'https://instagram-unofficial.p.rapidapi.com/user-stories',
@@ -24,11 +24,12 @@ class IG_STORIES_ACTIONS{
             }
           };
           
-          axios.request(options).then(function (response) {
-              this.userStories = response.data
+          const data = await axios.request(options).then(function (response) {
+              return response.data
           }).catch(function (error) {
               console.error(error);
           });
+          this.userStories = data
     }
 
 }

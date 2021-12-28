@@ -1,18 +1,20 @@
 import axios from 'axios'
-import { keys } from '../config/keys';
+import { keys } from '../../config/keys';
 class IG_POSTS_ACTIONS{
-
+    
+    public allPosts:any[];
     public userPosts:any;
     public unlikePost:any;
     public likePost:any;
     
     constructor(){
+        this.allPosts = []
         this.userPosts = {}
         this.unlikePost = {}
         this.likePost = {}
     }
     
-    getUserPosts(username:string,user_id:string,max_id:string){
+    async getUserPosts(username:string,user_id:string,max_id:string){
         var options:any = {
             method: 'GET',
             url: 'https://instagram-unofficial.p.rapidapi.com/user-posts',
@@ -30,13 +32,14 @@ class IG_POSTS_ACTIONS{
             }
           };
           
-          axios.request(options).then(function (response) {
-              this.userPosts = response.data
+          const data = await axios.request(options).then(function (response) {
+            return response.data
           }).catch(function (error) {
               console.error(error);
           });
+          this.userPosts = data
     }
-    getUnlikePost(media_id:string){
+    async getUnlikePost(media_id:string){
         var options:any = {
             method: 'GET',
             url: 'https://instagram-unofficial.p.rapidapi.com/unlike-post',
@@ -47,13 +50,14 @@ class IG_POSTS_ACTIONS{
             }
           };
           
-          axios.request(options).then(function (response) {
-                this.unlikePost = response.data
+          const data = await axios.request(options).then(function (response) {
+                return response.data
           }).catch(function (error) {
               console.error(error);
             });
+        this.unlikePost = data
     }
-    getLikePost(media_id:string){
+    async getLikePost(media_id:string){
         var options:any = {
             method: 'GET',
             url: 'https://instagram-unofficial.p.rapidapi.com/like-post',
@@ -64,11 +68,12 @@ class IG_POSTS_ACTIONS{
             }
           };
           
-          axios.request(options).then(function (response) {
-                this.likePost = response.data
+          const data = await axios.request(options).then(function (response) {
+                return response.data
           }).catch(function (error) {
               console.error(error);
           });
+          this.likePost = data
     }
 }
 

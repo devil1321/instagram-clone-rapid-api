@@ -15,7 +15,7 @@ const app = express()
 
 const cookieSession = require('cookie-session')
 
-const isAuthenticated = require('./modules/isAuthenticated')
+const isAuthenticated = require('./modules/controllers/isAuthenticated.controller')
 
 const authRoutes = require('./routes/auth.routes')
 const instagramRoutes = require('./routes/instagram.routes')

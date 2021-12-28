@@ -8,5 +8,6 @@ exports.keys = {
     },
     session: {
         cookieKey: 'asdsakjdldjsahfjfajdsakjfdksaljf0pdsajwefmndsmfbuhjweguyiqfkf',
+        sessionKey: '61caf82d2c60e0d1b4e3664d'
     }
 };

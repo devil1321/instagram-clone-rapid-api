@@ -13,7 +13,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const axios_1 = __importDefault(require("axios"));
-const keys_1 = require("../config/keys");
+const keys_1 = require("../../config/keys");
 class IG_USERS_ACTIONS {
     constructor() {
         this.user = {};
@@ -29,18 +29,19 @@ class IG_USERS_ACTIONS {
                 method: 'GET',
                 url: 'https://instagram-unofficial.p.rapidapi.com/get-user',
                 params: {
-                    session_key: global.session_key, username: username
+                    session_key: keys_1.keys.session.sessionKey, username: username
                 },
                 headers: {
                     'x-rapidapi-host': keys_1.keys.rapidAPI.host,
                     'x-rapidapi-key': keys_1.keys.rapidAPI.key
                 }
             };
-            yield axios_1.default.request(options).then(function (response) {
-                this.user = response.data;
+            const data = yield axios_1.default.request(options).then(function (response) {
+                return response.data;
             }).catch(function (error) {
                 console.error(error);
             });
+            this.user = data;
         });
     }
     getUserFollowers(username, user_id, max_id) {
@@ -59,11 +60,12 @@ class IG_USERS_ACTIONS {
                     'x-rapidapi-key': keys_1.keys.rapidAPI.key
                 }
             };
-            yield axios_1.default.request(options).then(function (response) {
-                this.followers = response.data;
+            const data = yield axios_1.default.request(options).then(function (response) {
+                return response.data;
             }).catch(function (error) {
                 console.error(error);
             });
+            this.followers = data;
         });
     }
     getUserFollowing(username, user_id, max_id) {
@@ -72,7 +74,7 @@ class IG_USERS_ACTIONS {
                 method: 'GET',
                 url: 'https://instagram-unofficial.p.rapidapi.com/user-following',
                 params: {
-                    session_key: global.session_key,
+                    session_key: keys_1.keys.session.sessionKey,
                     username: username,
                     user_id: user_id,
                     max_id: max_id
@@ -82,11 +84,12 @@ class IG_USERS_ACTIONS {
                     'x-rapidapi-key': keys_1.keys.rapidAPI.key
                 }
             };
-            yield axios_1.default.request(options).then(function (response) {
-                this.following = response.data;
+            const data = yield axios_1.default.request(options).then(function (response) {
+                return response.data;
             }).catch(function (error) {
                 console.error(error);
             });
+            this.following = data;
         });
     }
     getLogin(username, password) {
@@ -101,7 +104,12 @@ class IG_USERS_ACTIONS {
                 }
             };
             yield axios_1.default.request(options).then(function (response) {
-                global.session_key = response.data.session_key;
+                if (response.data.error) {
+                    console.log(response.data.error);
+                }
+                else {
+                    global.session_key = response.data.session_key;
+                }
             }).catch(function (error) {
                 console.error(error);
             });
@@ -118,11 +126,12 @@ class IG_USERS_ACTIONS {
                     'x-rapidapi-key': keys_1.keys.rapidAPI.key
                 }
             };
-            yield axios_1.default.request(options).then(function (response) {
-                this.follow = response.data;
+            const data = yield axios_1.default.request(options).then(function (response) {
+                return response.data;
             }).catch(function (error) {
                 console.error(error);
             });
+            this.follow = data;
         });
     }
     getUnfollow() {
@@ -136,11 +145,12 @@ class IG_USERS_ACTIONS {
                     'x-rapidapi-key': keys_1.keys.rapidAPI.key
                 }
             };
-            yield axios_1.default.request(options).then(function (response) {
-                this.unfollow = response.data;
+            const data = yield axios_1.default.request(options).then(function (response) {
+                return response.data;
             }).catch(function (error) {
                 console.error(error);
             });
+            this.unfollow = data;
         });
     }
 }

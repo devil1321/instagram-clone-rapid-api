@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { keys } from '../config/keys';
+import { keys } from '../../config/keys';
 
 class IG_SEARCH_ACTIONS {
 
@@ -15,7 +15,7 @@ class IG_SEARCH_ACTIONS {
         this.searchTop = {}
     };
 
-    getIGTVSearch(q: string){
+    async getIGTVSearch(q: string){
         var options: any = {
             method: 'GET',
             url: 'https://instagram-unofficial.p.rapidapi.com/search-igtv',
@@ -26,13 +26,14 @@ class IG_SEARCH_ACTIONS {
             }
         };
 
-        axios.request(options).then(function (response) {
-           this.searchIGTV = response.data
+        const data = await axios.request(options).then(function (response) {
+           return response.data
         }).catch(function (error) {
             console.log(error)
         })
+        this.searchIGTV = data
     }
-    getTagsSearch(q:string){
+    async getTagsSearch(q:string){
         var options:any = {
             method: 'GET',
             url: 'https://instagram-unofficial.p.rapidapi.com/search-tags',
@@ -43,13 +44,14 @@ class IG_SEARCH_ACTIONS {
             }
           };
           
-          axios.request(options).then(function (response) {
-              this.searchTags = response.data
+          const data = await axios.request(options).then(function (response) {
+              return response.data
           }).catch(function (error) {
               console.error(error);
           });
+          this.searchTags = data
     }
-    getUsersSearch(q:string){
+    async getUsersSearch(q:string){
         var options:any = {
             method: 'GET',
             url: 'https://instagram-unofficial.p.rapidapi.com/search-users',
@@ -60,13 +62,14 @@ class IG_SEARCH_ACTIONS {
             }
           };
           
-          axios.request(options).then(function (response) {
-              this.searchUsers = response.data
+          const data = await axios.request(options).then(function (response) {
+             return response.data
           }).catch(function (error) {
               console.error(error);
           });
+          this.searchUsers = data
     }
-    getTopSearch(q:string){
+    async getTopSearch(q:string){
         var options:any = {
             method: 'GET',
             url: 'https://instagram-unofficial.p.rapidapi.com/search',
@@ -77,11 +80,12 @@ class IG_SEARCH_ACTIONS {
             }
           };
           
-          axios.request(options).then(function (response) {
-              this.searchTop = response.data
+          const data = await axios.request(options).then(function (response) {
+              return response.data
           }).catch(function (error) {
               console.error(error);
           });
+          this.searchTop = data
     }
 }
 
