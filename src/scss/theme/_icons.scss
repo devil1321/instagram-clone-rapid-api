@@ -1,0 +1,24 @@
+.icon-very-sm{
+    height: 12px;
+    width: 12px;
+    background-repeat: no-repeat;
+    background-image: url('/public/assets/icons/icons-sprite.png');
+    &__correct{
+        background-position: -244px -369px;
+    }
+}
+.icon-sm{
+    background-repeat: no-repeat;
+    height: 24px;
+    width: 24px;
+    background-image: url('/public/assets/icons/icons-sprite.png');
+    &__facebook{
+        background-position: -234px -473px;
+    }
+    &__phone{
+        background-position: -447px -401px;
+    }
+    &__camera{
+        background-position: -473px -401px;
+    }    
+}

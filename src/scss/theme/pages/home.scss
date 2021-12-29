@@ -3,14 +3,20 @@
 @import '../components/card';
 @import '../components/post';
 @import '../components/comment';
+@import '../components/suggestion';
 
 .home{
-   padding:0px 150px;
+   padding:0px 200px;
    @include createFlex(row,center,flex-start,null);
   &__posts{
+      margin-top: 20px;
       width: 65%;
   }
+  &__title{
+      font-size: pxToRem(16);
+  }
   &__carousel-wrapper{
+      margin-top: -20px;
       width: 100%;
       position: relative;
       left:-10px;
@@ -22,7 +28,61 @@
       @include createFlex(row,flex-start,center,null);
     }
     &__profile{
-
+        margin-top: 50px;
+        padding-left:40px;
         width: 35%;
     }
+    &__profile-header{
+        width: 100%;
+      @include createFlex(row,flex-start,center,null);
+      span{
+          margin-left: auto;
+          color:$blue;
+
+          font-size: pxToRem(13);
+      }
+    }
+    &__profile-img{
+        @include profile-img();
+        max-width: 60px;
+        max-height: 60px;
+        border:1px solid rgb(158, 158, 158);
+    }
+    &__profile-info{
+        margin-left: 20px;
+        h3,p{
+            margin:5px 0px;
+            font-size:pxToRem(14);
+        }
+        p{
+            color:grey;
+        }
+    }
+    &__profile-suggestions-header{
+        color:grey;
+        font-size:pxToRem(14);
+        @include createFlex(row,space-between,center,null);
+    }
+    &__profile-links{
+        margin-top: 40px;
+        width: 80%;
+        @include createFlex(row,flex-start,center,wrap);
+        a{
+            margin:5px 0px;
+            font-size: pxToRem(12);
+            color:grey;
+        }
+    }
+    &__dot{
+        margin:0px 3px;
+        height:2px;
+        width: 2px;
+        border-radius: 100%;
+        background-color: grey;
+    }
+    &__profile-footer{
+        font-size: pxToRem(12);
+        color:grey;
+    }
+
 }

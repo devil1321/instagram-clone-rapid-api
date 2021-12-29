@@ -1,5 +1,6 @@
 import axios from 'axios'
 import { keys } from '../../config/keys';
+
 class IG_POSTS_ACTIONS{
     
     public allPosts:any[];

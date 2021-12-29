@@ -2,9 +2,11 @@
     text-align: center;
     padding:20px;
     margin:0px 10px;
-    min-width: 250px;
-    height:250px;
+    min-width: 200px;
+    height:210px;
     box-shadow: 0px 0px 1px black;
+    background-color: white;
+    @include createFlex(column,space-between,center,null);
     &__icon{
         height: 24px;
         width: 24px;
@@ -25,17 +27,18 @@
             background-position: -473px -401px;
         }
     }
-    @include createFlex(column,center,center,null);
     h2{
-        font-size:pxToRem(20)
+        font-size:pxToRem(16)
     }
     p{
         color:grey;
+        font-size:pxToRem(14)
     }
     button{
         @include blue-btn();
-        background-color: blue;
+        background-color:$blue;
         max-width: 70%;
         margin:0px auto;
+        font-size: pxToRem(12);
     }
 }

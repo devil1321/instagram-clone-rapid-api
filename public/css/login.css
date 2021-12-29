@@ -346,9 +346,57 @@ template {
   src: url("./fonts/FontsFree-Net-Billabong.ttf");
 }
 
+.icon-very-sm {
+  height: 12px;
+  width: 12px;
+  background-repeat: no-repeat;
+  background-image: url("/public/assets/icons/icons-sprite.png");
+}
+
+.icon-very-sm__correct {
+  background-position: -244px -369px;
+}
+
+.icon-sm {
+  background-repeat: no-repeat;
+  height: 24px;
+  width: 24px;
+  background-image: url("/public/assets/icons/icons-sprite.png");
+}
+
+.icon-sm__facebook {
+  background-position: -234px -473px;
+}
+
+.icon-sm__phone {
+  background-position: -447px -401px;
+}
+
+.icon-sm__camera {
+  background-position: -473px -401px;
+}
+
 body {
   background-color: #f9f9f9;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  font-size: 0.875rem;
+}
+
+svg:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.font-bold {
+  font-weight: bold;
+  margin-right: 5px;
 }
 
 .login {

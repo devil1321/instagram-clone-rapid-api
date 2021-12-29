@@ -1,0 +1,28 @@
+.comment{
+    @include createFlex(row,space-between,flex-start,null);
+    
+    &__profile-img{
+       @include profile-img();
+    }
+    &__content-wrapper{
+        margin-left: 10px;;
+        position: relative;
+        top:-15px;
+        left:0px;
+    }
+    &__content{
+        @include createFlex(row,space-between,center,null);
+        svg{
+            min-width: 15px;
+            min-height:15px;
+        }
+    }
+    &__footer{
+        span{
+            margin-right: 15px;
+            font-size: pxToRem(12);
+            color:grey;
+            font-weight: 300;
+        }
+    }
+}

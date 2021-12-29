@@ -52,7 +52,7 @@ $breakpoints-down:("small":"39.9375em", "sm-med":"33.75em", "medium-sm":"63em", 
     height:40px;
     width: 105%;
     font-weight: bold;
-    background-color: rgb(128, 239, 243);
+    background-color:$sky-blue;
     color:white;
     border:0px;
     border-radius: 5px;
@@ -97,5 +97,17 @@ $breakpoints-down:("small":"39.9375em", "sm-med":"33.75em", "medium-sm":"63em", 
         img{
             width: 100%;
         }
+    }
+}
+
+@mixin profile-img(){
+    min-height:32px;
+    min-width:32px;
+    max-height:32px;
+    max-width:32px;
+    overflow:hidden;
+    border-radius: 100%;
+    img{
+        width: 100%;
     }
 }

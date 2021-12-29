@@ -4,11 +4,11 @@ var isOpen = false;
 const isNavOpen = () => {
     if (!isOpen) {
         isOpen = true;
-        img.src = '/public/assets/icons/home-open.png';
+        img.src = '/public/assets/icons/png/home-open.png';
     }
     else {
         isOpen = false;
-        img.src = '/public/assets/icons/home.png';
+        img.src = '/public/assets/icons/png/home.png';
     }
 };
 navbar.addEventListener('click', isNavOpen);
@@ -30,3 +30,11 @@ const handleModal = () => {
     }
 };
 viewComments.addEventListener('click', handleModal);
+const postMoreInfo = document.querySelector('.post__more-info');
+const postContentInfo = document.querySelector('.post__content');
+const handleInfo = () => {
+    console.log('open');
+    postContentInfo.classList.remove('close');
+    postMoreInfo.style.display = 'none';
+};
+postMoreInfo.addEventListener('click', handleInfo);

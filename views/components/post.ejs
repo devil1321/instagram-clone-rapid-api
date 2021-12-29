@@ -1,22 +1,36 @@
 <div class="post">
     <div class="post__header">
         <div class="post__profile-img">
-            <img src="/public/assets/temp-profile.jpg" alt="">
+            <a href="#">
+                <img src="/public/assets/temp-profile.jpg" alt="">
+            </a>
         </div>
-        <span></span>
+        <svg class="svg__dots-icon" aria-label="More options" class="_8-yf5 " color="#262626" fill="#262626" height="24" role="img" viewBox="0 0 24 24" width="24"><circle cx="12" cy="12" r="1.5"></circle><circle cx="6" cy="12" r="1.5"></circle><circle cx="18" cy="12" r="1.5"></circle></svg>
     </div>
-    <img src="/public/assets/temp_post_image.jpg" alt="">
+    <div class="post__img">
+        <img src="/public/assets/temp_post_image.jpg" alt="">
+    </div>
     <div class="post__info">
         <div class="post__info-nav">
-            <div class="post__info-left-icons-group"></div>
-            <span></span>
+            <div class="post__info-left-icons-group">
+                <svg class="svg__feed-icon" aria-label="Like" class="_8-yf5 " color="#262626" fill="#262626" height="24" role="img" viewBox="0 0 24 24" width="24"><path d="M16.792 3.904A4.989 4.989 0 0121.5 9.122c0 3.072-2.652 4.959-5.197 7.222-2.512 2.243-3.865 3.469-4.303 3.752-.477-.309-2.143-1.823-4.303-3.752C5.141 14.072 2.5 12.167 2.5 9.122a4.989 4.989 0 014.708-5.218 4.21 4.21 0 013.675 1.941c.84 1.175.98 1.763 1.12 1.763s.278-.588 1.11-1.766a4.17 4.17 0 013.679-1.938m0-2a6.04 6.04 0 00-4.797 2.127 6.052 6.052 0 00-4.787-2.127A6.985 6.985 0 00.5 9.122c0 3.61 2.55 5.827 5.015 7.97.283.246.569.494.853.747l1.027.918a44.998 44.998 0 003.518 3.018 2 2 0 002.174 0 45.263 45.263 0 003.626-3.115l.922-.824c.293-.26.59-.519.885-.774 2.334-2.025 4.98-4.32 4.98-7.94a6.985 6.985 0 00-6.708-7.218z"></path></svg>
+                <svg class="svg__message-icon" aria-label="Comment" class="_8-yf5 " color="#262626" fill="#262626" height="24" role="img" viewBox="0 0 24 24" width="24"><path d="M20.656 17.008a9.993 9.993 0 10-3.59 3.615L22 22z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="2"></path></svg>
+                <svg class="svg__telegram-icon" aria-label="Share Post" class="_8-yf5 " color="#262626" fill="#262626" height="24" role="img" viewBox="0 0 24 24" width="24"><line fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="2" x1="22" x2="9.218" y1="3" y2="10.083"></line><polygon fill="none" points="11.698 20.334 22 3.001 2 3.001 9.218 10.084 11.698 20.334" stroke="currentColor" stroke-linejoin="round" stroke-width="2"></polygon></svg>
+            </div>
+            <svg class="svg__pin-icon" aria-label="Save" class="_8-yf5 " color="#262626" fill="#262626" height="24" role="img" viewBox="0 0 24 24" width="24"><polygon fill="none" points="20 21 12 13.44 4 21 4 3 20 3 20 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></polygon></svg>
         </div>
         <h3>65,675 likes</h3>
-        <p><span>natgeo</span>Photo by @williamodaniels | Bangui, Central African Republic, 2014. Chaibou Mahamat, 33, is seen in his looted home in the 5 Kilo neighborhood. After militia fighters attacked his family, his wife and child left for Cameroon, but he had not had any contact with them. His brother left too, and was later killed by the same militia, the Anti-balakas. The country has been affected by sectarian violence since 2013, through militias such as the Anti-balaka (mostly Christian) and the Seleka (mostly Muslim). I've traveled there a dozen times to report on the war, where atrocities have been committed by both sides. Follow me on @williamodaniels for more human stories around the world.</p>
+        <div class="post__content-wrapper">
+            <p class="post__content close"><span>natgeo</span>Photo by <a href="#"><a href="#">@williamodaniels</a></a> | Bangui, Central African Republic, 2014. Chaibou Mahamat, 33, is seen in his looted home in the 5 Kilo neighborhood. After militia fighters attacked his family, his wife and child left for Cameroon, but he had not had any contact with them. His brother left too, and was later killed by the same militia, the Anti-balakas. The country has been affected by sectarian violence since 2013, through militias such as the Anti-balaka (mostly Christian) and the Seleka (mostly Muslim). I've traveled there a dozen times to report on the war, where atrocities have been committed by both sides. Follow me on <a href="#">@williamodaniels</a> for more human stories around the world. </p>
+            <span class="post__more-info">more</span>
+        </div>
         <p class="post__comments-btn">View all 495 comments</p>
-        <p>5 hours ago</p>
-        <form>
-            <span></span>
+        <% for(let i = 0; i < 2; i++){%>
+            <%- include('comment') %>
+        <%}%>
+        <p class="post__timestamp">5 hours ago</p>
+        <form class="post__form">
+            <svg class="svg__face-icon" aria-label="Emoji" class="_8-yf5 " color="#262626" fill="#262626" height="24" role="img" viewBox="0 0 24 24" width="24"><path d="M15.83 10.997a1.167 1.167 0 101.167 1.167 1.167 1.167 0 00-1.167-1.167zm-6.5 1.167a1.167 1.167 0 10-1.166 1.167 1.167 1.167 0 001.166-1.167zm5.163 3.24a3.406 3.406 0 01-4.982.007 1 1 0 10-1.557 1.256 5.397 5.397 0 008.09 0 1 1 0 00-1.55-1.263zM12 .503a11.5 11.5 0 1011.5 11.5A11.513 11.513 0 0012 .503zm0 21a9.5 9.5 0 119.5-9.5 9.51 9.51 0 01-9.5 9.5z"></path></svg>
             <input type="text" placeholder="Add comment..."/>
             <button type="submit">Post</button>
         </form>
@@ -30,18 +44,21 @@
                     <div class="post__profile-img">
                         <img src="/public/assets/temp-profile.jpg" alt="">
                     </div>
-                    <span class="post__modal-icon"></span>
+                    <span>natgeo</span>
                     <div class="post__modal-dot"></div>
-                    <span class="post__modal-menu"></span>
+                    <span class="icon-very-sm__correct"></span>
+                    <svg class="svg__dots-icon post__modal-menu" aria-label="More options" class="_8-yf5 " color="#262626" fill="#262626" height="24" role="img" viewBox="0 0 24 24" width="24"><circle cx="12" cy="12" r="1.5"></circle><circle cx="6" cy="12" r="1.5"></circle><circle cx="18" cy="12" r="1.5"></circle></svg>
                 </div>
                 <div class="post__modal-main">
                     <div class="post__profile-img">
-                        <img src="/public/assets/temp-profile.jpg" alt="">
+                        <a href="#">
+                            <img src="/public/assets/temp-profile.jpg" alt="">
+                        </a>
                     </div>
                     <div class="post__modal-main-content">
-                        <p><span>natgeo</span><span class="post__modal-icon" ></span>Photo by @williamodaniels | Bangui, Central African Republic, 2014. Chaibou Mahamat, 33, is seen in his looted home in the 5 Kilo neighborhood. After militia fighters attacked his family, his wife and child left for Cameroon, but he had not had any contact with them. His brother left too, and was later killed by the same militia, the Anti-balakas. The country has been affected by sectarian violence since 2013, through militias such as the Anti-balaka (mostly Christian) and the Seleka (mostly Muslim). I've traveled there a dozen times to report on the war, where atrocities have been committed by both sides. Follow me on @williamodaniels for more human stories around the world.</p>
+                        <p><span>natgeo</span><span class="icon-very-sm__correct"></span>Photo by <a href="#">@williamodaniels</a> | Bangui, Central African Republic, 2014. Chaibou Mahamat, 33, is seen in his looted home in the 5 Kilo neighborhood. After militia fighters attacked his family, his wife and child left for Cameroon, but he had not had any contact with them. His brother left too, and was later killed by the same militia, the Anti-balakas. The country has been affected by sectarian violence since 2013, through militias such as the Anti-balaka (mostly Christian) and the Seleka (mostly Muslim). I've traveled there a dozen times to report on the war, where atrocities have been committed by both sides. Follow me on <a href="#">@williamodaniels</a> for more human stories around the world.</p>
                     </div>
-                    <span class="post__modal-load-icon"></span>
+                    <svg class="svg__add-icon" aria-label="Load more comments" class="_8-yf5 " color="#262626" fill="#262626" height="24" role="img" viewBox="0 0 24 24" width="24"><circle cx="12.001" cy="12.005" fill="none" r="10.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></circle><line fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x1="7.001" x2="17.001" y1="12.005" y2="12.005"></line><line fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x1="12.001" x2="12.001" y1="7.005" y2="17.005"></line></svg>
                     <div class="post__comments-group">
                         <% for(let i = 0; i < 20; i++){%>
                             <%- include('comment') %>
@@ -50,17 +67,17 @@
                     <div class="post__footer">
                         <div class="post__footer-menu">
                             <div class="post__footer-icon-group">
-                                <span class="post__heart-icon"></span>
-                                <span class="post__message-icon"></span>
-                                <span class="post__telegram-icon"></span>
+                                <svg class="svg__feed-icon" aria-label="Like" class="_8-yf5 " color="#262626" fill="#262626" height="24" role="img" viewBox="0 0 24 24" width="24"><path d="M16.792 3.904A4.989 4.989 0 0121.5 9.122c0 3.072-2.652 4.959-5.197 7.222-2.512 2.243-3.865 3.469-4.303 3.752-.477-.309-2.143-1.823-4.303-3.752C5.141 14.072 2.5 12.167 2.5 9.122a4.989 4.989 0 014.708-5.218 4.21 4.21 0 013.675 1.941c.84 1.175.98 1.763 1.12 1.763s.278-.588 1.11-1.766a4.17 4.17 0 013.679-1.938m0-2a6.04 6.04 0 00-4.797 2.127 6.052 6.052 0 00-4.787-2.127A6.985 6.985 0 00.5 9.122c0 3.61 2.55 5.827 5.015 7.97.283.246.569.494.853.747l1.027.918a44.998 44.998 0 003.518 3.018 2 2 0 002.174 0 45.263 45.263 0 003.626-3.115l.922-.824c.293-.26.59-.519.885-.774 2.334-2.025 4.98-4.32 4.98-7.94a6.985 6.985 0 00-6.708-7.218z"></path></svg>
+                                <svg class="svg__message-icon" aria-label="Comment" class="_8-yf5 " color="#262626" fill="#262626" height="24" role="img" viewBox="0 0 24 24" width="24"><path d="M20.656 17.008a9.993 9.993 0 10-3.59 3.615L22 22z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="2"></path></svg>
+                                <svg class="svg__telegram-icon" aria-label="Share Post" class="_8-yf5 " color="#262626" fill="#262626" height="24" role="img" viewBox="0 0 24 24" width="24"><line fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="2" x1="22" x2="9.218" y1="3" y2="10.083"></line><polygon fill="none" points="11.698 20.334 22 3.001 2 3.001 9.218 10.084 11.698 20.334" stroke="currentColor" stroke-linejoin="round" stroke-width="2"></polygon></svg>
                             </div>
-                            <span class="post__pin-icon"></span>
+                            <svg class="svg__pin-icon" aria-label="Save" class="_8-yf5 " color="#262626" fill="#262626" height="24" role="img" viewBox="0 0 24 24" width="24"><polygon fill="none" points="20 21 12 13.44 4 21 4 3 20 3 20 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></polygon></svg>
                         </div>
                         <h3>80,089 likes</h3>
                         <p>5 HOURS AGO</p>
                     </div>
                     <form action="" class="post__add-comment-modal-form">
-                        <span class="post__face-icon"></span>
+                        <svg class="svg__face-icon" aria-label="Emoji" class="_8-yf5 " color="#262626" fill="#262626" height="24" role="img" viewBox="0 0 24 24" width="24"><path d="M15.83 10.997a1.167 1.167 0 101.167 1.167 1.167 1.167 0 00-1.167-1.167zm-6.5 1.167a1.167 1.167 0 10-1.166 1.167 1.167 1.167 0 001.166-1.167zm5.163 3.24a3.406 3.406 0 01-4.982.007 1 1 0 10-1.557 1.256 5.397 5.397 0 008.09 0 1 1 0 00-1.55-1.263zM12 .503a11.5 11.5 0 1011.5 11.5A11.513 11.513 0 0012 .503zm0 21a9.5 9.5 0 119.5-9.5 9.51 9.51 0 01-9.5 9.5z"></path></svg>
                         <input type="text" placeholder="Add comment...">
                         <button type="submit">Post</button>
                     </form>

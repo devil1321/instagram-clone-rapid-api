@@ -1,0 +1,21 @@
+.suggestion{
+    margin:10px 0px;
+    @include createFlex(row,flex-start,center,null);
+    span{
+        font-size: pxToRem(13);
+        margin-left: auto;
+        color:$blue;
+    }
+    &__img{
+        @include profile-img();
+    }
+    &__content{
+        margin-left: 10px;;
+        h3,p{
+            margin:0px;
+        }
+        p{
+            color:grey;
+        }
+    }
+}
