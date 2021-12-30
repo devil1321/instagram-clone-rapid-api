@@ -45,13 +45,15 @@
                         <div class="home__carousel-next"></div>                    
                     </div>
                     <% for(let i = 0; i < 10; i++){%>
-                        <%- include('components/post') %>
+                        <%- include('components/post',{
+                            id:i,
+                            url:"/public/assets/temp-profile.jpg"}) 
+                        %>
                     <%}%>
-                   
                 </div>
                 <div class="home__profile">
                     <div class="home__profile-header">
-                        <div class="home__profile-img">
+                        <div class="home__profile-img-main">
                             <img src="/public/assets/temp-profile-img.jpg" alt="">
                         </div>
                         <div class="home__profile-info">
@@ -66,7 +68,7 @@
                             <span class="font-bold">See All</span>
                         </div>
                         <% for(let i = 0; i < 5; i++){%>
-                            <%- include('components/suggestion') %>
+                            <%- include('components/suggestion',{ url:"/public/assets/temp-profile.jpg" }) %>
                         <%}%>
                     </div>
                     <div class="home__profile-links">
@@ -98,7 +100,6 @@
         </div>
         <script> var exports = {}; </script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js" integrity="sha512-u9akINsQsAkG9xjc1cnGF4zw5TFDwkxuc9vUp5dltDWYCSmyd0meygbvgXrlc/z7/o4a19Fb5V0OUE58J7dcyw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        <script src="/js/_posts.actions.js"></script>
         <script src="/js/app.js"></script>
     </body>
 </html>

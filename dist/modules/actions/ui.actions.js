@@ -8,7 +8,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 class UI_ACTIONS {
-    constructor() {
+    UI_ACTIONS_CLIENTconstructor() {
         this.isMobile = false;
     }
     setIsMobile() {

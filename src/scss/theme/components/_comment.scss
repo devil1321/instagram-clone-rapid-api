@@ -1,6 +1,5 @@
 .comment{
     @include createFlex(row,space-between,flex-start,null);
-    
     &__profile-img{
        @include profile-img();
     }
@@ -11,7 +10,7 @@
         left:0px;
     }
     &__content{
-        @include createFlex(row,space-between,center,null);
+        @include createFlex(row,flex-start,center,null);
         svg{
             min-width: 15px;
             min-height:15px;

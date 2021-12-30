@@ -1,6 +1,6 @@
 class UI_ACTIONS {
     public isMobile:boolean;
-    constructor(){
+    UI_ACTIONS_CLIENTconstructor(){
         this.isMobile = false
     }
     async setIsMobile(){

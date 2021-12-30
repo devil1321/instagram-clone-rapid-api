@@ -8,5 +8,16 @@ router.get('/home',/*setUserDataContoller,setUserPostsArrayController,*/(req:Req
     // console.log(IG_USERS)
     res.render('home',{title:'Home'})
 })
-
+router.get('/inbox',/*setUserDataContoller,setUserPostsArrayController,*/(req:Request,res:any)=>{
+    // console.log(IG_USERS)
+    res.render('inbox',{title:'Inbox'})
+})
+router.get('/create-post',/*setUserDataContoller,setUserPostsArrayController,*/(req:Request,res:any)=>{
+    // console.log(IG_USERS)
+    res.render('home',{title:'Create Post'})
+})
+router.get('/explore',/*setUserDataContoller,setUserPostsArrayController,*/(req:Request,res:any)=>{
+    // console.log(IG_USERS)
+    res.render('explore',{title:'Explore'})
+})
 module.exports = router

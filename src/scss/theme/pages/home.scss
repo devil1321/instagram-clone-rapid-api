@@ -4,10 +4,12 @@
 @import '../components/post';
 @import '../components/comment';
 @import '../components/suggestion';
+@import '../components/post-modal';
+@import '../components/send-modal';
 
 .home{
    padding:0px 200px;
-   @include createFlex(row,center,flex-start,null);
+   @include createFlex(row,flex-start,flex-start,null);
   &__posts{
       margin-top: 20px;
       width: 65%;
@@ -28,12 +30,15 @@
       @include createFlex(row,flex-start,center,null);
     }
     &__profile{
+        position: fixed;
+        top:90px;
+        right:160px;
         margin-top: 50px;
         padding-left:40px;
-        width: 35%;
+        width: 25%;
     }
     &__profile-header{
-        width: 100%;
+      width: 100%;
       @include createFlex(row,flex-start,center,null);
       span{
           margin-left: auto;
@@ -42,11 +47,15 @@
           font-size: pxToRem(13);
       }
     }
-    &__profile-img{
-        @include profile-img();
+    &__profile-img-main{
+        overflow: hidden;
         max-width: 60px;
         max-height: 60px;
         border:1px solid rgb(158, 158, 158);
+        border-radius: 100%;
+        img{
+            width: 100%;
+        }
     }
     &__profile-info{
         margin-left: 20px;

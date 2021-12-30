@@ -2,7 +2,7 @@
 @import './fonts';
 @import './variables';
 @import './mixins';
-@import '../theme/icons';
+@import './icons';
 body{
     background-color: #f9f9f9;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -21,4 +21,9 @@ svg:hover{
 .font-bold{
     font-weight: bold;
     margin-right: 5px;
+}
+.container{
+   position: relative;
+   top:60px;
+   left:0px;
 }

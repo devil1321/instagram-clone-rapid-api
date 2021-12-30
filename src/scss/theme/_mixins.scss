@@ -107,7 +107,6 @@ $breakpoints-down:("small":"39.9375em", "sm-med":"33.75em", "medium-sm":"63em", 
     max-width:32px;
     overflow:hidden;
     border-radius: 100%;
-    img{
-        width: 100%;
-    }
+    background-size: cover;
+    background-position: center center;
 }
