@@ -1,0 +1,37 @@
+.add-post-modal{
+    h2{
+        font-weight: 300;
+        margin:0px;
+        padding:0px;
+    }
+    @include modal-overlay();
+    &__close{
+        @include close-btn();
+    }
+    &__header{
+        padding-top: 5px;
+        width: 100%;
+        border-bottom: 1px solid lightgrey;
+    }
+    &__content{
+        position: relative;
+        left:35%;
+        top:10%;
+        width: 35%;
+        height:80%;
+        border-radius: 25px;
+        text-align: center;
+        background-color: white;
+        transform:translate(-50% -50%);
+      
+    }
+    &__main{
+        height:70%;
+        @include createFlex(column,center,center,null);
+        button{
+            @include blue-btn();
+            background-color:$blue;
+            width: fit-content;
+        }
+    }
+}

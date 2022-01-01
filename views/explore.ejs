@@ -17,9 +17,19 @@
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
+        <div class="container">
         <%- include('components/navbar') %>
-        <div class="find-people">
-            welcome from inbox
+        <%- include('components/add-post-modal') %>
+        <div class="explore">
+            <% for(let i = 0; i< 100; i++){%>
+                <div class="explore__item">
+                    <div class="explore__item-overlay">
+                        <h3>10321321 <i class="fa fa-heart"></i></h3>
+                    </div>
+                    <img src="/public/assets/termp-expolre.jpg" alt="">
+                </div>
+                <% } %>
+            </div>
         </div>
         <script> var exports = {}; </script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js" integrity="sha512-u9akINsQsAkG9xjc1cnGF4zw5TFDwkxuc9vUp5dltDWYCSmyd0meygbvgXrlc/z7/o4a19Fb5V0OUE58J7dcyw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>

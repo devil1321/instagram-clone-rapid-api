@@ -2,6 +2,7 @@
 class UI_ACTIONS_CLIENT {
     public isHomeOpen:boolean;
     public isFeedOpen: boolean;
+    public isAddPostOpen:boolean
     public navbar:HTMLImageElement;
     public navbarHomeIcon: HTMLImageElement;
     public navbarMenu: HTMLDivElement;
@@ -14,9 +15,13 @@ class UI_ACTIONS_CLIENT {
     public viewComments:NodeListOf<HTMLParagraphElement>
     public postMoreInfo: NodeListOf<HTMLSpanElement>;
     public postModalClose: NodeListOf<HTMLDivElement>
+    public addPostModal:HTMLDivElement;
+    public closeAddPostModal: HTMLDivElement;
+    public feedMenu: HTMLDivElement;
     constructor(){
         this.isHomeOpen = false
         this.isFeedOpen = false
+        this.isAddPostOpen = false
         this.navbar = document.querySelector('.navbar__btn')
         this.navbarHomeIcon = document.querySelector('.navbar__home-icon') 
         this.navbarMenu = document.querySelector('.navbar__main-menu') 
@@ -26,8 +31,11 @@ class UI_ACTIONS_CLIENT {
         this.navbarExploreIcon = document.querySelector('.navbar__find-people-icon')
         this.navbarFeedIcon = document.querySelector('.navbar__feed-icon')
         this.viewComments = document.querySelectorAll('.post__comments-btn')
-        this.postModalClose = document.querySelectorAll('.post__modal-close')
+        this.postModalClose = document.querySelectorAll('.post__modal-close span')
         this.postMoreInfo = document.querySelectorAll('.post__more-info')
+        this.addPostModal = document.querySelector('.add-post-modal')
+        this.closeAddPostModal = document.querySelector('.add-post-modal__close')
+        this.feedMenu = document.querySelector('.navbar__activity-menu-wrapper')
     }
     isNavOpen = () => {
         if(!this.isHomeOpen){
@@ -42,11 +50,23 @@ class UI_ACTIONS_CLIENT {
         if(!this.isFeedOpen){
             this.navbarFeedIcon.src = '/public/assets/icons/png/activity-feed-black.png'
             this.isFeedOpen = true
+            this.handleOpenModal(this.feedMenu)
         }else{
             this.navbarFeedIcon.src = '/public/assets/icons/png/activity-feed.png'
             this.isFeedOpen = false
+            this.handleCloseModal(this.feedMenu)
         }
     }
+    handlePostIcon = () =>{
+        if(!this.isAddPostOpen){
+            this.navbarAddPostIcon.src = '/public/assets/icons/png/add-black.png'
+            this.isAddPostOpen = true
+        }else{
+            this.navbarAddPostIcon.src = '/public/assets/icons/png/add.png'
+            this.isAddPostOpen = false
+        }
+    }
+
 
     handleIconsChange = () =>{
         const path = window.location.pathname
@@ -67,6 +87,7 @@ class UI_ACTIONS_CLIENT {
                 return
         }
     }
+
     handlePostModalOpen = (e:any)=>{
         const postModal = document.querySelector(`#post__modal-overlay-${e.target.dataset.id}`) as HTMLDivElement
         postModal.style.display = 'block'
@@ -85,12 +106,26 @@ class UI_ACTIONS_CLIENT {
         e.target.style.display = 'none'
         
     }
+    handleOpenModal = (element:any) =>{
+        element.style.zIndex = '3'
+        element.style.display = 'block'
+        setTimeout(()=>{
+            element.style.opacity = '1'
+        },100)
+    }
+    handleCloseModal= (element:any) =>{
+        element.style.display = 'none'
+        element.style.zIndex = '-1'
+        element.style.opacity = '0'
+    }
 }
+
 
 const UI_CLIENT = new UI_ACTIONS_CLIENT
 
 UI_CLIENT.handleIconsChange()
 UI_CLIENT.navbarFeedIcon.addEventListener('click',UI_CLIENT.handleChangeFeedIcon)
+UI_CLIENT.navbarAddPostIcon.addEventListener('click',UI_CLIENT.handlePostIcon)
 UI_CLIENT.navbar.addEventListener('click',UI_CLIENT.isNavOpen)
 UI_CLIENT.viewComments.forEach((item:any)=>{
     item.addEventListener('click',UI_CLIENT.handlePostModalOpen)
@@ -100,4 +135,9 @@ UI_CLIENT.postMoreInfo.forEach((item:any) =>{
 })
 UI_CLIENT.postModalClose.forEach((item:any)=>{
     item.addEventListener('click',UI_CLIENT.handlePostModalClose)
+})
+UI_CLIENT.navbarAddPostIcon.addEventListener('click',()=> UI_CLIENT.handleOpenModal(UI_CLIENT.addPostModal))
+UI_CLIENT.closeAddPostModal.addEventListener('click',()=> {
+    UI_CLIENT.handleCloseModal(UI_CLIENT.addPostModal)
+    UI_CLIENT.handlePostIcon()
 })

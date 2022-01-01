@@ -20,6 +20,7 @@
         <![endif]-->
         <div class="container">
             <%- include('components/navbar') %>
+            <%- include('components/add-post-modal') %>
             <div class="home">
                 <div class="home__posts">
                     <h2 class="home__title">Getting Started</h2>
@@ -41,8 +42,12 @@
                                 btnText:"Add Profile Photo"
                             }) %>
                         </div>  
-                        <div class="home__carousel-prev"></div>
-                        <div class="home__carousel-next"></div>                    
+                        <div class="home__carousel-prev">
+                            <i class="fas fa-chevron-left fa-1x"></i>
+                        </div>
+                        <div class="home__carousel-next">
+                            <i class="fas fa-chevron-right fa-1x"></i>
+                        </div>                    
                     </div>
                     <% for(let i = 0; i < 10; i++){%>
                         <%- include('components/post',{
@@ -101,5 +106,6 @@
         <script> var exports = {}; </script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js" integrity="sha512-u9akINsQsAkG9xjc1cnGF4zw5TFDwkxuc9vUp5dltDWYCSmyd0meygbvgXrlc/z7/o4a19Fb5V0OUE58J7dcyw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script src="/js/app.js"></script>
+        <script src="/js/carousel-home.js"></script>
     </body>
 </html>

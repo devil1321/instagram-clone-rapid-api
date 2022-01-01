@@ -5,6 +5,7 @@
 @import '../components/comment';
 @import '../components/suggestion';
 @import '../components/post-modal';
+@import '../components/add-post-modal';
 @import '../components/send-modal';
 
 .home{
@@ -18,12 +19,47 @@
       font-size: pxToRem(16);
   }
   &__carousel-wrapper{
-      margin-top: -20px;
+      position: relative;
+      top:0px;
+      left:0px;
+      overflow-x:hidden;
+  }
+  &__carousel{
+      transition:all 0.7s ease-in-out
+  }
+  &__carousel-next,
+  &__carousel-prev{
+      cursor:pointer;
+      z-index: 1;
+      height:30px;
+      width: 30px;
+      border-radius: 100%;
+      background-color: rgba(0,0,0,0.4);
+      @include createFlex(row,center,center,null);
+      &:hover{
+          opacity:0.7;
+      }
+      i{
+          color:white;
+      }
+  }
+  &__carousel-next{
+      position: absolute;
+      top:35%;
+      right:0px;
+  }
+  &__carousel-prev{
+    position: absolute;
+    top:35%;
+    left:10px;
+  }
+  &__carousel-wrapper{
+      overflow-x:hidden;
       width: 100%;
+      margin-top: -20px;
       position: relative;
       left:-10px;
       top:0px;
-      overflow-x:hidden;
   }
   &__carousel{
       height:300px;
@@ -43,7 +79,6 @@
       span{
           margin-left: auto;
           color:$blue;
-
           font-size: pxToRem(13);
       }
     }

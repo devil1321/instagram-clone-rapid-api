@@ -14,10 +14,22 @@ class UI_ACTIONS_CLIENT {
             if (!this.isFeedOpen) {
                 this.navbarFeedIcon.src = '/public/assets/icons/png/activity-feed-black.png';
                 this.isFeedOpen = true;
+                this.handleOpenModal(this.feedMenu);
             }
             else {
                 this.navbarFeedIcon.src = '/public/assets/icons/png/activity-feed.png';
                 this.isFeedOpen = false;
+                this.handleCloseModal(this.feedMenu);
+            }
+        };
+        this.handlePostIcon = () => {
+            if (!this.isAddPostOpen) {
+                this.navbarAddPostIcon.src = '/public/assets/icons/png/add-black.png';
+                this.isAddPostOpen = true;
+            }
+            else {
+                this.navbarAddPostIcon.src = '/public/assets/icons/png/add.png';
+                this.isAddPostOpen = false;
             }
         };
         this.handleIconsChange = () => {
@@ -56,8 +68,21 @@ class UI_ACTIONS_CLIENT {
             postContentInfo.classList.remove('close');
             e.target.style.display = 'none';
         };
+        this.handleOpenModal = (element) => {
+            element.style.zIndex = '3';
+            element.style.display = 'block';
+            setTimeout(() => {
+                element.style.opacity = '1';
+            }, 100);
+        };
+        this.handleCloseModal = (element) => {
+            element.style.display = 'none';
+            element.style.zIndex = '-1';
+            element.style.opacity = '0';
+        };
         this.isHomeOpen = false;
         this.isFeedOpen = false;
+        this.isAddPostOpen = false;
         this.navbar = document.querySelector('.navbar__btn');
         this.navbarHomeIcon = document.querySelector('.navbar__home-icon');
         this.navbarMenu = document.querySelector('.navbar__main-menu');
@@ -67,13 +92,17 @@ class UI_ACTIONS_CLIENT {
         this.navbarExploreIcon = document.querySelector('.navbar__find-people-icon');
         this.navbarFeedIcon = document.querySelector('.navbar__feed-icon');
         this.viewComments = document.querySelectorAll('.post__comments-btn');
-        this.postModalClose = document.querySelectorAll('.post__modal-close');
+        this.postModalClose = document.querySelectorAll('.post__modal-close span');
         this.postMoreInfo = document.querySelectorAll('.post__more-info');
+        this.addPostModal = document.querySelector('.add-post-modal');
+        this.closeAddPostModal = document.querySelector('.add-post-modal__close');
+        this.feedMenu = document.querySelector('.navbar__activity-menu-wrapper');
     }
 }
 const UI_CLIENT = new UI_ACTIONS_CLIENT;
 UI_CLIENT.handleIconsChange();
 UI_CLIENT.navbarFeedIcon.addEventListener('click', UI_CLIENT.handleChangeFeedIcon);
+UI_CLIENT.navbarAddPostIcon.addEventListener('click', UI_CLIENT.handlePostIcon);
 UI_CLIENT.navbar.addEventListener('click', UI_CLIENT.isNavOpen);
 UI_CLIENT.viewComments.forEach((item) => {
     item.addEventListener('click', UI_CLIENT.handlePostModalOpen);
@@ -83,4 +112,9 @@ UI_CLIENT.postMoreInfo.forEach((item) => {
 });
 UI_CLIENT.postModalClose.forEach((item) => {
     item.addEventListener('click', UI_CLIENT.handlePostModalClose);
+});
+UI_CLIENT.navbarAddPostIcon.addEventListener('click', () => UI_CLIENT.handleOpenModal(UI_CLIENT.addPostModal));
+UI_CLIENT.closeAddPostModal.addEventListener('click', () => {
+    UI_CLIENT.handleCloseModal(UI_CLIENT.addPostModal);
+    UI_CLIENT.handlePostIcon();
 });

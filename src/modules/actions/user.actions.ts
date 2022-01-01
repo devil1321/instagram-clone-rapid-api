@@ -98,7 +98,8 @@ class IG_USERS_ACTIONS {
               if(response.data.error){
                   console.log(response.data.error)
               }else{
-                  global.session_key = response.data.session_key
+                //   global.session_key = response.data.session_key
+                  global.session_key = keys.session.sessionKey
               }
           }).catch(function (error) {
               console.error(error);

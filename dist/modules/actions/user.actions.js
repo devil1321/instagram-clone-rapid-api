@@ -108,7 +108,8 @@ class IG_USERS_ACTIONS {
                     console.log(response.data.error);
                 }
                 else {
-                    global.session_key = response.data.session_key;
+                    //   global.session_key = response.data.session_key
+                    global.session_key = keys_1.keys.session.sessionKey;
                 }
             }).catch(function (error) {
                 console.error(error);

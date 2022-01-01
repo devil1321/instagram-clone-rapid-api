@@ -12,10 +12,6 @@ router.get('/inbox', /*setUserDataContoller,setUserPostsArrayController,*/ (req,
     // console.log(IG_USERS)
     res.render('inbox', { title: 'Inbox' });
 });
-router.get('/create-post', /*setUserDataContoller,setUserPostsArrayController,*/ (req, res) => {
-    // console.log(IG_USERS)
-    res.render('home', { title: 'Create Post' });
-});
 router.get('/explore', /*setUserDataContoller,setUserPostsArrayController,*/ (req, res) => {
     // console.log(IG_USERS)
     res.render('explore', { title: 'Explore' });

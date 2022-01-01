@@ -1,17 +1,23 @@
-.icon-very-sm{
+[class^="icon-very-sm"]{
+    background-position: -244px -369px;
     height: 12px;
     width: 12px;
     background-repeat: no-repeat;
-    background-image: url('/public/assets/icons/icons-sprite.png');
-    &__correct{
-        background-position: -244px -369px;
+
+}
+.icon-very-sm{
+    &__correct{       
+        background-image: url('/public/assets/icons/png/icons-sprite.png');
+
     }
 }
-.icon-sm{
+[class^="icon-sm"]{
     background-repeat: no-repeat;
-    height: 24px;
-    width: 24px;
-    background-image: url('/public/assets/icons/icons-sprite.png');
+    min-height: 24px;
+    min-width: 24px;
+    background-image: url('/public/assets/icons/png/icons-sprite.png');
+}
+.icon-sm{
     &__facebook{
         background-position: -234px -473px;
     }
@@ -21,4 +27,19 @@
     &__camera{
         background-position: -473px -401px;
     }    
+}
+
+[class^="icon-big"]{
+    min-height: 96px;
+    min-width: 96px;
+    background-repeat: no-repeat;
+    background-image: url('/public/assets/icons/png/icons-sprite.png');    
+}
+.icon-big{
+    &__telegram{
+        background-position: -196px -205px;
+    }
+    &__feed{
+        background-position: 0px -303px;
+    }
 }

@@ -1,2 +1,83 @@
 @import '../global';
+@import '../icons';
 @import '../components/navbar';
+@import '../components/add-post-modal';
+
+.inbox{
+    padding:0px 200px;
+    &__panel-wrapper{
+        margin-top:90px;
+        height:86vh;
+        width: 100%;
+        background-color: white;
+        border-radius: 3px;
+        border: 1px solid lightgrey;
+        border-bottom: 0px;
+        @include createFlex(row,center,flex-start,null);
+    }
+    &__left-panel{
+        height:100%;
+        min-width: 30%;
+        border-right: 1px solid lightgrey;
+    }
+    &__left-panel-header{
+        padding:0px 20px;
+        border-bottom:1px solid lightgrey;
+        @include createFlex(row,center,center,null);
+        div{
+            @include createFlex(row,flex-start,center,null);
+            i{
+                margin-left: 10px;
+            }
+        }
+        svg{
+           position: relative;
+           left:14%;
+           top:0px;
+        }
+
+    }
+    &__contact{
+        padding:0px 20px;
+        margin:20px 0px;
+        @include createFlex(row,flex-start,center,null);
+     
+    }
+    &__percentage{
+        margin-left:10px;
+        width: calc(100% - 60px);
+    }
+    &__round{
+        height:60px;
+        width: 60px;
+        border-radius: 100%;
+        background-color: lightgrey;
+    }
+    &__70,
+    &__50{
+        height:15px;
+        background-color: lightgrey;
+        border-radius: 5px;
+    }   
+    &__70{
+        margin-bottom:10px;
+        width: 70%;
+    }
+    &__50{
+        width: 50%;
+    }
+    &__right-panel{
+        height:100%;
+        min-width: 70%;
+        @include createFlex(column,center,center,null);
+        h2,p{
+            margin:5px 0px;
+        }
+        button{
+            @include blue-btn();
+            margin-top:20px;
+            background-color: $blue;
+            width: 150px;
+        }
+    }
+}
