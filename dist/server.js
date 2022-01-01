@@ -14,8 +14,8 @@ const cookieSession = require('cookie-session');
 const isAuthenticated = require('./modules/controllers/isAuthenticated.controller');
 const authRoutes = require('./routes/auth.routes');
 const instagramRoutes = require('./routes/instagram.routes');
-require('dotenv').confing;
-const PORTHTTPS = 7000 || process.env.HTTPS;
+require('dotenv').config({ path: path.resolve(__dirname, '../.env') });
+const PORTHTTPS = process.env.PORT || 8000;
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(cookieSession({
