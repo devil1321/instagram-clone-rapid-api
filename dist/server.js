@@ -4,8 +4,8 @@ const keys_1 = require("./config/keys");
 var fs = require('fs');
 var https = require('https');
 var privateKey = fs.readFileSync(__dirname + '/ssl/host.key');
-var certificate = fs.readFileSync(__dirname + '/ssl/host.cert');
-var credentials = { key: privateKey, cert: certificate };
+// var certificate = fs.readFileSync(__dirname + '/ssl/host.cert');
+// var credentials = {key: privateKey, cert: certificate};
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
@@ -32,7 +32,6 @@ app.get('/', (req, res) => {
 });
 app.use('/instagram/auth', authRoutes);
 app.use('/instagram', /* isAuthenticated,*/ instagramRoutes);
-var httpsServer = https.createServer(credentials, app);
-httpsServer.listen(PORTHTTPS, (req, res) => {
-    console.log('https server started at port ' + PORTHTTPS);
+app.listen(PORTHTTPS, (req, res) => {
+    console.log('http server started at port ' + PORTHTTPS);
 });
