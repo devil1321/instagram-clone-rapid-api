@@ -8,6 +8,9 @@ router.get('/home', /*setUserDataContoller,setUserPostsArrayController,*/ (req, 
     // console.log(IG_USERS)
     res.render('home', { title: 'Home' });
 });
+router.get('/suggestions', (req, res) => {
+    res.render('suggestions', { title: 'Suggestions' });
+});
 router.get('/inbox', /*setUserDataContoller,setUserPostsArrayController,*/ (req, res) => {
     // console.log(IG_USERS)
     res.render('inbox', { title: 'Inbox' });
@@ -15,5 +18,8 @@ router.get('/inbox', /*setUserDataContoller,setUserPostsArrayController,*/ (req,
 router.get('/explore', /*setUserDataContoller,setUserPostsArrayController,*/ (req, res) => {
     // console.log(IG_USERS)
     res.render('explore', { title: 'Explore' });
+});
+router.get('/profile', (req, res) => {
+    res.render('profile', { title: 'Profile' });
 });
 module.exports = router;

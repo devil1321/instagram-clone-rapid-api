@@ -1,0 +1,19 @@
+@import '../global';
+@import '../components/navbar';
+@import '../components/suggestion';
+@import '../components/add-post-modal';
+.suggestion__follow-btn{
+        @include blue-btn();
+        width: fit-content;
+        background-color: $blue;
+        color:white !important;
+        height:30px;
+        padding:0px 10px;
+        @include createFlex(row,center,center,null);
+}
+.suggestions{
+    &__wrapper{
+        width: 40%;
+        margin:0px auto;
+    }
+}

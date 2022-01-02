@@ -446,6 +446,7 @@ svg:hover {
 }
 
 .sign-up button {
+  cursor: pointer;
   margin: 10px 0px;
   height: 40px;
   width: 105%;
@@ -520,6 +521,7 @@ svg:hover {
 }
 
 .sign-up__form button {
+  cursor: pointer;
   margin: 10px 0px;
   height: 40px;
   width: 105%;

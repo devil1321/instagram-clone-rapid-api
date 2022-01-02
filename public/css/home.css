@@ -488,6 +488,7 @@ svg:hover {
   border-radius: 100%;
   background-size: cover;
   background-position: center center;
+  border: 1px solid white;
 }
 
 .navbar__profile-img img {
@@ -530,11 +531,11 @@ svg:hover {
 }
 
 .navbar__activity-menu-wrapper {
+  visibility: hidden;
   position: absolute;
-  z-index: -1;
+  z-index: -2;
   top: 5px;
   right: 12px;
-  display: none;
   opacity: 0;
   -webkit-transition: all 300ms ease-in-out;
   transition: all 300ms ease-in-out;
@@ -546,9 +547,11 @@ svg:hover {
   position: relative;
   z-index: 2;
   top: 35px;
-  right: 32px;
+  right: 34px;
   min-height: 20px;
   min-width: 20px;
+  max-height: 20px;
+  max-width: 20px;
   background-color: white;
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
@@ -559,7 +562,6 @@ svg:hover {
   position: absolute;
   top: 45px;
   left: -350px;
-  z-index: 3;
   width: 450px;
   height: 180px;
   background-color: white;
@@ -587,11 +589,62 @@ svg:hover {
   margin-top: 10px;
 }
 
+.navbar__profile-menu-wrapper {
+  visibility: hidden;
+  z-index: -2;
+  opacity: 0;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+  position: absolute;
+  top: 50px;
+  left: 70px;
+  width: 230px;
+  border-radius: 5px;
+  background-color: white;
+  -webkit-filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.15));
+          filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.15));
+}
+
+.navbar__profile-menu-wrapper .navbar__arrow {
+  position: relative;
+  z-index: 2;
+  top: -9px;
+  right: -157px;
+}
+
+.navbar__profile-menu-item {
+  color: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.navbar__profile-menu-item:hover {
+  background-color: #f9f9f9;
+}
+
+.navbar__profile-menu-logout {
+  color: black;
+  padding: 10px;
+  border-top: 1px solid lightgrey;
+}
+
 .card {
   text-align: center;
   padding: 20px;
   margin: 0px 10px;
   min-width: 200px;
+  max-width: 250px;
   height: 210px;
   -webkit-box-shadow: 0px 0px 1px black;
           box-shadow: 0px 0px 1px black;
@@ -639,6 +692,7 @@ svg:hover {
 }
 
 .card button {
+  cursor: pointer;
   margin: 10px 0px;
   height: 40px;
   width: 105%;
@@ -960,14 +1014,14 @@ svg:hover {
 }
 
 .post__modal-overlay {
-  display: block;
+  visibility: hidden;
   opacity: 0;
   position: fixed;
   z-index: -1;
   top: 0px;
   left: 0px;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   background-color: rgba(0, 0, 0, 0.75);
   -webkit-transition: all 500ms ease-in-out;
   transition: all 500ms ease-in-out;
@@ -984,17 +1038,14 @@ svg:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  display: none;
 }
 
 .post__modal {
   width: 70vw;
   height: 50vh;
   position: relative;
-  top: 17%;
-  left: 9%;
-  -webkit-transform: translate(-50% -50%);
-          transform: translate(-50% -50%);
+  top: 0%;
+  left: 0%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1163,14 +1214,14 @@ svg:hover {
 }
 
 .add-post-modal {
-  display: block;
+  visibility: hidden;
   opacity: 0;
   position: fixed;
   z-index: -1;
   top: 0px;
   left: 0px;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   background-color: rgba(0, 0, 0, 0.75);
   -webkit-transition: all 500ms ease-in-out;
   transition: all 500ms ease-in-out;
@@ -1238,15 +1289,13 @@ svg:hover {
 
 .add-post-modal__content {
   position: relative;
-  left: 35%;
-  top: 10%;
+  left: 0%;
+  top: 0%;
   width: 35%;
   height: 80%;
   border-radius: 25px;
   text-align: center;
   background-color: white;
-  -webkit-transform: translate(-50% -50%);
-          transform: translate(-50% -50%);
 }
 
 .add-post-modal__main {
@@ -1267,6 +1316,7 @@ svg:hover {
 }
 
 .add-post-modal__main button {
+  cursor: pointer;
   margin: 10px 0px;
   height: 40px;
   width: 105%;
@@ -1279,6 +1329,130 @@ svg:hover {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+}
+
+.send-modal-overlay {
+  visibility: hidden;
+  opacity: 0;
+  position: fixed;
+  z-index: -1;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.75);
+  -webkit-transition: all 500ms ease-in-out;
+  transition: all 500ms ease-in-out;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.send-modal {
+  width: 35%;
+  border-radius: 25px;
+  background-color: white;
+  overflow: hidden;
+}
+
+.send-modal__header {
+  padding: 0px 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.send-modal__header button {
+  font-weight: bold;
+  color: #80eff3;
+  background: transparent;
+  border: 0px;
+  outline: none;
+}
+
+.send-modal__header button:focus, .send-modal__header button:active {
+  border: 0px;
+  outline: none;
+}
+
+.send-modal__to {
+  padding: 0px 20px;
+  height: 50px;
+  overflow-y: scroll;
+  border-top: 1px solid lightgrey;
+  border-bottom: 1px solid lightgrey;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.send-modal__to input {
+  margin-left: 30px;
+  border: 0px;
+  outline: none;
+}
+
+.send-modal__to input:focus, .send-modal__to input:active {
+  border: 0px;
+  outline: none;
+}
+
+.send-modal__close {
+  cursor: pointer;
+}
+
+.send-modal__close span {
+  display: block;
+  width: 20px;
+  border-bottom: 2px solid black;
+  -webkit-transform-origin: 9px 1px;
+          transform-origin: 9px 1px;
+}
+
+.send-modal__close span:first-of-type {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.send-modal__close span:last-of-type {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.send-modal__suggestions {
+  padding: 20px;
+  height: 300px;
+  overflow-y: scroll;
 }
 
 .home {
@@ -1460,6 +1634,10 @@ svg:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.home__profile-suggestions-header span {
+  cursor: pointer;
 }
 
 .home__profile-links {

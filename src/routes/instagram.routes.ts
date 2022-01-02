@@ -1,3 +1,4 @@
+import { render } from 'ejs'
 import { Response, Request, Application } from 'express'
 const IG_USERS = require('../modules/actions/user.actions')
 
@@ -8,6 +9,11 @@ router.get('/home',/*setUserDataContoller,setUserPostsArrayController,*/(req:Req
     // console.log(IG_USERS)
     res.render('home',{title:'Home'})
 })
+
+router.get('/suggestions',(req:Request,res:any)=>{
+    res.render('suggestions',{title:'Suggestions'})
+})
+
 router.get('/inbox',/*setUserDataContoller,setUserPostsArrayController,*/(req:Request,res:any)=>{
     // console.log(IG_USERS)
     res.render('inbox',{title:'Inbox'})
@@ -17,4 +23,9 @@ router.get('/explore',/*setUserDataContoller,setUserPostsArrayController,*/(req:
     // console.log(IG_USERS)
     res.render('explore',{title:'Explore'})
 })
+
+router.get('/profile',(req:Request,res:any)=>{
+    res.render('profile',{title:'Profile'})
+})
+
 module.exports = router

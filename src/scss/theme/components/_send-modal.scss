@@ -1,0 +1,63 @@
+.send-modal-overlay{
+   @include modal-overlay();
+}
+.send-modal{
+    width: 35%;
+    border-radius: 25px;
+    background-color: white;
+    overflow:hidden;
+
+    &__header{
+        padding:0px 20px;
+        @include createFlex(row,space-between,center,null);
+        button{
+            font-weight: bold;
+            color:$sky-blue;
+            background:transparent;
+            border:0px;
+            outline:none;
+            &:focus,&:active{
+                border:0px;
+                outline:none;
+            }
+        }
+    }
+    &__to{
+        padding:0px 20px;
+        height:50px;
+        overflow-y:scroll;
+        border-top: 1px solid lightgrey;
+        border-bottom: 1px solid lightgrey;
+        @include createFlex(row,flex-start,center,null);
+        input{
+            margin-left: 30px;
+            border:0px;
+            outline:none;
+            &:focus,&:active{
+                border:0px;
+                outline:none;
+            }
+        }
+    }
+    &__close{
+        cursor: pointer;
+        span{
+            display:block;
+            width: 20px;
+            border-bottom: 2px solid black;
+            transform-origin: 9px 1px;
+            &:first-of-type{
+                transform:rotate(45deg);
+            }
+            &:last-of-type{
+                transform:rotate(-45deg);
+            }
+        }
+    }
+
+    &__suggestions{
+        padding:20px;
+        height:300px;
+        overflow-y:scroll;
+    }
+}

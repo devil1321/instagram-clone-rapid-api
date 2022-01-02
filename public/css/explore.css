@@ -488,6 +488,7 @@ svg:hover {
   border-radius: 100%;
   background-size: cover;
   background-position: center center;
+  border: 1px solid white;
 }
 
 .navbar__profile-img img {
@@ -530,11 +531,11 @@ svg:hover {
 }
 
 .navbar__activity-menu-wrapper {
+  visibility: hidden;
   position: absolute;
-  z-index: -1;
+  z-index: -2;
   top: 5px;
   right: 12px;
-  display: none;
   opacity: 0;
   -webkit-transition: all 300ms ease-in-out;
   transition: all 300ms ease-in-out;
@@ -546,9 +547,11 @@ svg:hover {
   position: relative;
   z-index: 2;
   top: 35px;
-  right: 32px;
+  right: 34px;
   min-height: 20px;
   min-width: 20px;
+  max-height: 20px;
+  max-width: 20px;
   background-color: white;
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
@@ -559,7 +562,6 @@ svg:hover {
   position: absolute;
   top: 45px;
   left: -350px;
-  z-index: 3;
   width: 450px;
   height: 180px;
   background-color: white;
@@ -587,15 +589,65 @@ svg:hover {
   margin-top: 10px;
 }
 
+.navbar__profile-menu-wrapper {
+  visibility: hidden;
+  z-index: -2;
+  opacity: 0;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+  position: absolute;
+  top: 50px;
+  left: 70px;
+  width: 230px;
+  border-radius: 5px;
+  background-color: white;
+  -webkit-filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.15));
+          filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.15));
+}
+
+.navbar__profile-menu-wrapper .navbar__arrow {
+  position: relative;
+  z-index: 2;
+  top: -9px;
+  right: -157px;
+}
+
+.navbar__profile-menu-item {
+  color: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.navbar__profile-menu-item:hover {
+  background-color: #f9f9f9;
+}
+
+.navbar__profile-menu-logout {
+  color: black;
+  padding: 10px;
+  border-top: 1px solid lightgrey;
+}
+
 .add-post-modal {
-  display: block;
+  visibility: hidden;
   opacity: 0;
   position: fixed;
   z-index: -1;
   top: 0px;
   left: 0px;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   background-color: rgba(0, 0, 0, 0.75);
   -webkit-transition: all 500ms ease-in-out;
   transition: all 500ms ease-in-out;
@@ -663,15 +715,13 @@ svg:hover {
 
 .add-post-modal__content {
   position: relative;
-  left: 35%;
-  top: 10%;
+  left: 0%;
+  top: 0%;
   width: 35%;
   height: 80%;
   border-radius: 25px;
   text-align: center;
   background-color: white;
-  -webkit-transform: translate(-50% -50%);
-          transform: translate(-50% -50%);
 }
 
 .add-post-modal__main {
@@ -692,6 +742,7 @@ svg:hover {
 }
 
 .add-post-modal__main button {
+  cursor: pointer;
   margin: 10px 0px;
   height: 40px;
   width: 105%;

@@ -38,6 +38,7 @@
     }
     &__profile-img{
         @include profile-img();
+        border:1px solid white;
         img{
             position: relative;
             left:-10px;
@@ -61,11 +62,11 @@
         }
     }
     &__activity-menu-wrapper{
+        visibility: hidden;
         position: absolute;
-        z-index: -1;
+        z-index: -2;
         top:5px;
         right:12px;
-        display:none;
         opacity:0;
         transition:all 300ms ease-in-out;
         filter:drop-shadow(0px 0px 10px rgba(0,0,0,0.15));
@@ -75,9 +76,11 @@
         position: relative;
         z-index: 2;
         top:35px;
-        right:32px;
+        right:34px;
         min-height:20px;
         min-width: 20px;
+        max-height:20px;
+        max-width: 20px;
         background-color: white;
         transform:rotate(45deg);
 
@@ -87,7 +90,6 @@
         position: absolute;
         top:45px;
         left:-350px;
-        z-index: 3;
         width: 450px;
         height:180px;
         background-color:white;
@@ -99,5 +101,37 @@
             }
             margin:5px 0px;
         }
+    }
+    &__profile-menu-wrapper{
+        visibility: hidden;
+        z-index: -2;
+        opacity:0;
+        transition:all 300ms ease-in-out;
+        position:absolute;
+        top:50px;
+        left:70px;
+        width:230px;
+        border-radius: 5px;
+        background-color: white;
+        filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.15));
+        .navbar__arrow{
+            position: relative;
+            z-index: 2;
+            top:-9px;
+            right:-157px;
+        }
+       
+    }
+    &__profile-menu-item{
+       color:black;
+       @include createFlex(row,flex-start,center,null);
+       &:hover{
+           background-color:#f9f9f9;
+       }
+    }
+    &__profile-menu-logout {
+        color:black;
+        padding:10px;
+        border-top: 1px solid lightgrey;
     }
 }

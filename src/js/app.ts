@@ -3,6 +3,7 @@ class UI_ACTIONS_CLIENT {
     public isHomeOpen:boolean;
     public isFeedOpen: boolean;
     public isAddPostOpen:boolean
+    public isProfileOpen:boolean;
     public navbar:HTMLImageElement;
     public navbarHomeIcon: HTMLImageElement;
     public navbarMenu: HTMLDivElement;
@@ -18,10 +19,16 @@ class UI_ACTIONS_CLIENT {
     public addPostModal:HTMLDivElement;
     public closeAddPostModal: HTMLDivElement;
     public feedMenu: HTMLDivElement;
+    public profileBtn: HTMLDivElement;
+    public profileMenu: HTMLDivElement;
+    public sendModalOpenBtn: HTMLDivElement;
+    public sendModalCloseBtn: HTMLDivElement;
+    public sendModal: HTMLDivElement;
     constructor(){
         this.isHomeOpen = false
         this.isFeedOpen = false
         this.isAddPostOpen = false
+        this.isProfileOpen = false
         this.navbar = document.querySelector('.navbar__btn')
         this.navbarHomeIcon = document.querySelector('.navbar__home-icon') 
         this.navbarMenu = document.querySelector('.navbar__main-menu') 
@@ -36,6 +43,11 @@ class UI_ACTIONS_CLIENT {
         this.addPostModal = document.querySelector('.add-post-modal')
         this.closeAddPostModal = document.querySelector('.add-post-modal__close')
         this.feedMenu = document.querySelector('.navbar__activity-menu-wrapper')
+        this.profileBtn = document.querySelector('.navbar__profile-img')
+        this.profileMenu = document.querySelector('.navbar__profile-menu-wrapper')
+        this.sendModalOpenBtn = document.querySelector('.inbox__send-message')
+        this.sendModalCloseBtn = document.querySelector('.send-modal__close')
+        this.sendModal = document.querySelector('.send-modal-overlay')
     }
     isNavOpen = () => {
         if(!this.isHomeOpen){
@@ -87,18 +99,33 @@ class UI_ACTIONS_CLIENT {
                 return
         }
     }
+    handleProfileMenu = () =>{
+        if(!this.isProfileOpen){
+            this.profileBtn.style.border = '1px solid black'
+            this.isProfileOpen = true
+            this.handleOpenModal(this.profileMenu)
+        }else{
+            this.profileBtn.style.border = '1px solid white'
+            this.isProfileOpen = false
+            this.handleCloseModal(this.profileMenu)
+        }
+    }
 
     handlePostModalOpen = (e:any)=>{
         const postModal = document.querySelector(`#post__modal-overlay-${e.target.dataset.id}`) as HTMLDivElement
-        postModal.style.display = 'block'
-        postModal.style.opacity = '1'
-        postModal.style.zIndex = '3'
+        setTimeout(() => {
+            postModal.style.visibility = 'visible'
+            postModal.style.opacity = '1'
+            postModal.style.zIndex = '3'
+        }, 100);
     }
     handlePostModalClose = (e:any) => {
         const postModal = document.querySelector(`#post__modal-overlay-${e.target.dataset.id}`) as HTMLDivElement
-        postModal.style.display = 'none'
         postModal.style.opacity = '0'
-        postModal.style.zIndex = '-1'
+        postModal.style.visibility = 'hidden'
+        setTimeout(() => {
+            postModal.style.zIndex = '-1'
+        }, 1000);
     }
     handleInfo = (e:any) =>{
         const postContentInfo = document.querySelector(`#post__content-${e.target.dataset.id}`) as HTMLParagraphElement
@@ -108,15 +135,17 @@ class UI_ACTIONS_CLIENT {
     }
     handleOpenModal = (element:any) =>{
         element.style.zIndex = '3'
-        element.style.display = 'block'
+        element.style.visibility = 'visible'
         setTimeout(()=>{
             element.style.opacity = '1'
         },100)
     }
     handleCloseModal= (element:any) =>{
-        element.style.display = 'none'
-        element.style.zIndex = '-1'
         element.style.opacity = '0'
+        element.style.visibility = 'hidden'    
+        setTimeout(()=>{
+            element.style.zIndex = '-1'
+        },1000)
     }
 }
 
@@ -125,6 +154,7 @@ const UI_CLIENT = new UI_ACTIONS_CLIENT
 
 UI_CLIENT.handleIconsChange()
 UI_CLIENT.navbarFeedIcon.addEventListener('click',UI_CLIENT.handleChangeFeedIcon)
+UI_CLIENT.profileBtn.addEventListener('click',UI_CLIENT.handleProfileMenu)
 UI_CLIENT.navbarAddPostIcon.addEventListener('click',UI_CLIENT.handlePostIcon)
 UI_CLIENT.navbar.addEventListener('click',UI_CLIENT.isNavOpen)
 UI_CLIENT.viewComments.forEach((item:any)=>{
@@ -141,3 +171,9 @@ UI_CLIENT.closeAddPostModal.addEventListener('click',()=> {
     UI_CLIENT.handleCloseModal(UI_CLIENT.addPostModal)
     UI_CLIENT.handlePostIcon()
 })
+if(UI_CLIENT.sendModalOpenBtn){
+    UI_CLIENT.sendModalOpenBtn.addEventListener('click',()=>UI_CLIENT.handleOpenModal(UI_CLIENT.sendModal))
+}
+if(UI_CLIENT.sendModalCloseBtn){
+    UI_CLIENT.sendModalCloseBtn.addEventListener('click',()=>UI_CLIENT.handleCloseModal(UI_CLIENT.sendModal))
+}

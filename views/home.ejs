@@ -70,7 +70,7 @@
                     <div class="home__profile-suggestions">
                         <div class="home__profile-suggestions-header">
                             <h3>Suggestions for you</h3>
-                            <span class="font-bold">See All</span>
+                            <a href="/instagram/suggestions" class="font-bold home__profile-all">See All</a>
                         </div>
                         <% for(let i = 0; i < 5; i++){%>
                             <%- include('components/suggestion',{ url:"/public/assets/temp-profile.jpg" }) %>

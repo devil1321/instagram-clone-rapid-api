@@ -4,15 +4,13 @@
     }
     &__modal-overlay{
         @include modal-overlay();
-        display:none;
     }
     &__modal{
         width: 70vw;
         height:50vh;
         position:relative;
-        top:17%;
-        left:9%;
-        transform:translate(-50% -50%);
+        top:0%;
+        left:0%;
         @include createFlex(row,center,center,null);
         img{
             width: 50%;

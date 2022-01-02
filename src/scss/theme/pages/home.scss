@@ -9,6 +9,7 @@
 @import '../components/send-modal';
 
 .home{
+  
    padding:0px 200px;
    @include createFlex(row,flex-start,flex-start,null);
   &__posts{
@@ -103,10 +104,15 @@
         }
     }
     &__profile-suggestions-header{
+      
         color:grey;
         font-size:pxToRem(14);
         @include createFlex(row,space-between,center,null);
+        span{
+            cursor: pointer;
+        }
     }
+    
     &__profile-links{
         margin-top: 40px;
         width: 80%;

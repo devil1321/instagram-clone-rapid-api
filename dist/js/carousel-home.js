@@ -4,7 +4,7 @@ class HOME_CAROUSEL {
             this.carousel.style.transform = 'translate(0%)';
         };
         this.handleNext = () => {
-            this.carousel.style.transform = 'translate(-27%)';
+            this.carousel.style.transform = 'translate(-28%)';
         };
         this.carouselWrapper = document.querySelector('.home__carousel-wrapper');
         this.carousel = document.querySelector('.home__carousel');
