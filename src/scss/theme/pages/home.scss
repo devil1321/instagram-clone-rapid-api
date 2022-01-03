@@ -80,8 +80,8 @@
       @include createFlex(row,flex-start,center,null);
       span{
           margin-left: auto;
-          color:$blue;
           font-size: pxToRem(13);
+          color:$blue;
       }
     }
     &__profile-img-main{
@@ -109,8 +109,9 @@
         color:grey;
         font-size:pxToRem(14);
         @include createFlex(row,space-between,center,null);
-        span{
+        a{
             cursor: pointer;
+            color:$blue;
         }
     }
     

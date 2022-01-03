@@ -25,4 +25,7 @@ router.get('/profile', (req, res) => {
 router.get('/saved', (req, res) => {
     res.render('profile', { title: 'Saved' });
 });
+router.get('/settings', (req, res) => {
+    res.render('settings', { title: 'Settings' });
+});
 module.exports = router;

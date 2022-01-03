@@ -71,6 +71,7 @@
         svg{
             margin-right:5px;
             pointer-events: none;
+            color:grey;
         }
     }
     &__tab{
@@ -139,6 +140,7 @@
         width: 100%;
         text-align: center;
         a{
+            font-size:pxToRem(14);
             color:grey;
         }
     }
@@ -147,6 +149,8 @@
         text-align: center;
         span{
             color:grey;
+            font-size:pxToRem(14);
+
         }
     }
 }

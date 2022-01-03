@@ -1123,6 +1123,7 @@ svg:hover {
 .profile__tab-link svg {
   margin-right: 5px;
   pointer-events: none;
+  color: grey;
 }
 
 .profile__tab {
@@ -1267,6 +1268,7 @@ svg:hover {
 }
 
 .profile__footer a {
+  font-size: 0.875rem;
   color: grey;
 }
 
@@ -1277,5 +1279,6 @@ svg:hover {
 
 .profile__foot span {
   color: grey;
+  font-size: 0.875rem;
 }
 /*# sourceMappingURL=profile.css.map */

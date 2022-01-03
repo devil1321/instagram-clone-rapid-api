@@ -30,5 +30,8 @@ router.get('/profile',(req:Request,res:any)=>{
 router.get('/saved',(req:Request,res:any)=>{
     res.render('profile',{title:'Saved'})
 })
+router.get('/settings',(req:Request,res:any)=>{
+    res.render('settings',{title:'Settings'})
+})
 
 module.exports = router
