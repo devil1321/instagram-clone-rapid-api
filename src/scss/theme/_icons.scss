@@ -28,7 +28,21 @@
         background-position: -473px -401px;
     }    
 }
+[class^="icon-md"]{
+    background-image: url('/public/assets/icons/png/sprite-icons-md.png');    
+    height: 62px;
+    width: 62px;
+    background-repeat: no-repeat;
 
+}
+.icon-md{
+    &__save{
+        background-position: -192px -269px;
+    }
+    &__tag{
+        background-position: -256px -269px;
+    }
+}
 [class^="icon-big"]{
     min-height: 96px;
     min-width: 96px;

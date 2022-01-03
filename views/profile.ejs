@@ -20,24 +20,99 @@
         <div class="container">
         <%- include('components/navbar') %>
         <%- include('components/add-post-modal') %>
+        <%- include('components/switch-accounts-modal') %>
+
         <div class="profile">
-           <div class="profile__cards">
-            <%- include('components/card', {
-                title:"Find Facebook Friends",
-                text:"You choose which friends to follow. We'll never post to Facebook without your permission.",
-                btnText:"Connect to Facebook",
-            }) %>
-            <%- include('components/card', {
-                title:"Add Phone Number",
-                text:"Add your phone number so you can reset your password, find friends and more.",
-                btnText:"Add Phone Number"
-            }) %>
-            <%- include('components/card', {
-                title:"Add Profile Photo",
-                text:"Add a profile photo so your friends know it's you.",
-                btnText:"Add Profile Photo"
-            }) %>
-           </div>
+            <div class="profile__info">
+                <div class="profile__img">
+                    <img src="/public/assets/temp-profile-img.jpg" alt="">
+                </div>
+                <div class="profile__info-main">
+                    <div class="profile__info-group">
+                        <h1>devil2671321</h1>
+                        <button>Edit Profile</button>
+                        <svg aria-label="Settings" class="_8-yf5 " color="#262626" fill="#262626" height="16" role="img" viewBox="0 0 24 24" width="16"><circle cx="12" cy="12" fill="none" r="8.635" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></circle><path d="M14.232 3.656a1.269 1.269 0 01-.796-.66L12.93 2h-1.86l-.505.996a1.269 1.269 0 01-.796.66m-.001 16.688a1.269 1.269 0 01.796.66l.505.996h1.862l.505-.996a1.269 1.269 0 01.796-.66M3.656 9.768a1.269 1.269 0 01-.66.796L2 11.07v1.862l.996.505a1.269 1.269 0 01.66.796m16.688-.001a1.269 1.269 0 01.66-.796L22 12.93v-1.86l-.996-.505a1.269 1.269 0 01-.66-.796M7.678 4.522a1.269 1.269 0 01-1.03.096l-1.06-.348L4.27 5.587l.348 1.062a1.269 1.269 0 01-.096 1.03m11.8 11.799a1.269 1.269 0 011.03-.096l1.06.348 1.318-1.317-.348-1.062a1.269 1.269 0 01.096-1.03m-14.956.001a1.269 1.269 0 01.096 1.03l-.348 1.06 1.317 1.318 1.062-.348a1.269 1.269 0 011.03.096m11.799-11.8a1.269 1.269 0 01-.096-1.03l.348-1.06-1.317-1.318-1.062.348a1.269 1.269 0 01-1.03-.096" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="2"></path></svg>
+                    </div>
+                    <div class="profile__info-group">
+                        <span><span class="font-bold">0</span>posts</span>
+                        <span><span class="font-bold">0</span>followres</span>
+                        <span><span class="font-bold">1</span>following</span>
+                    </div>
+                    <h3>Dominik Stepien</h3>
+                </div>
+            </div>
+            <div class="profile__tabs-nav">
+                <div class="profile__tab-link active" data-id="1" id="tab-link-1">
+                    <svg aria-label="" class="_8-yf5 " color="#262626" fill="#262626" height="12" role="img" viewBox="0 0 24 24" width="12"><rect fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="18" x="3" y="3"></rect><line fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x1="9.015" x2="9.015" y1="3" y2="21"></line><line fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x1="14.985" x2="14.985" y1="3" y2="21"></line><line fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x1="21" x2="3" y1="9.015" y2="9.015"></line><line fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x1="21" x2="3" y1="14.985" y2="14.985"></line></svg>
+                    Posts
+                </div>
+                <div class="profile__tab-link" data-id="2" id="tab-link-2">
+                    <svg aria-label="" class="_8-yf5 " color="#8e8e8e" fill="#8e8e8e" height="12" role="img" viewBox="0 0 24 24" width="12"><polygon fill="none" points="20 21 12 13.44 4 21 4 3 20 3 20 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></polygon></svg>
+                    Saved
+                </div>
+                <div class="profile__tab-link" data-id="3" id="tab-link-3">
+                    <svg aria-label="" class="_8-yf5 " color="#8e8e8e" fill="#8e8e8e" height="12" role="img" viewBox="0 0 24 24" width="12"><path d="M10.201 3.797L12 1.997l1.799 1.8a1.59 1.59 0 001.124.465h5.259A1.818 1.818 0 0122 6.08v14.104a1.818 1.818 0 01-1.818 1.818H3.818A1.818 1.818 0 012 20.184V6.08a1.818 1.818 0 011.818-1.818h5.26a1.59 1.59 0 001.123-.465z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path><path d="M18.598 22.002V21.4a3.949 3.949 0 00-3.948-3.949H9.495A3.949 3.949 0 005.546 21.4v.603" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path><circle cx="12.072" cy="11.075" fill="none" r="3.556" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></circle></svg>
+                    Tagged
+                </div>
+            </div>
+            <div class="profile__tabs-wrapper">
+                <div class="profile__tab" id="tab-1">
+                    <div class="profile__tab-header">
+                        <h3>Getting Started</h3>
+                    </div>
+                    <div class="profile__cards">
+                        <%- include('components/card', {
+                            title:"Find Facebook Friends",
+                            text:"You choose which friends to follow. We'll never post to Facebook without your permission.",
+                            btnText:"Connect to Facebook",
+                        }) %>
+                        <%- include('components/card', {
+                            title:"Add Phone Number",
+                            text:"Add your phone number so you can reset your password, find friends and more.",
+                            btnText:"Add Phone Number"
+                        }) %>
+                        <%- include('components/card', {
+                            title:"Add Profile Photo",
+                            text:"Add a profile photo so your friends know it's you.",
+                            btnText:"Add Profile Photo"
+                        }) %>
+                    </div>
+                </div>
+                <div class="profile__tab" id="tab-2">
+                    <div class="profile__tab-header">
+                        <p>Only you can see what you've saved</p>
+                        <button><i class="fa fa-plus"></i> New Collection</button>
+                    </div>
+                    <div class="profile__tab-body">
+                        <div class="icon-md__save"></div>
+                        <h2>Save</h2>
+                        <p>Save photos and videos that you want to see again. No one is notified, and only you can see what you've saved.</p>
+                    </div>
+                </div>
+                <div class="profile__tab" id="tab-3">
+                   <div class="icon-md__tag"></div>
+                   <h2>Photos of you</h2>
+                   <p>When people tag you in photos, they'll appear here.</p>
+                </div>
+            </div>
+            <div class="profile__footer">
+                <a href="#">Meta</a>
+                <a href="#">About</a>
+                <a href="#">Blog</a>
+                <a href="#">Jobs</a>
+                <a href="#">Help</a>
+                <a href="#">API</a>
+                <a href="#">Privacy</a>
+                <a href="#">Terms</a>
+                <a href="#">Top Accounts</a>
+                <a href="#">Hashtags</a>
+                <a href="#">Locations</a>
+                <a href="#">Instagram Lite</a>
+            </div>
+            <div class="profile__foot">
+                <span>English</span>
+                <span>&copy; 2022 Instagram from Meta</span>
+            </div>
         </div>
         <script> var exports = {}; </script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js" integrity="sha512-u9akINsQsAkG9xjc1cnGF4zw5TFDwkxuc9vUp5dltDWYCSmyd0meygbvgXrlc/z7/o4a19Fb5V0OUE58J7dcyw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>

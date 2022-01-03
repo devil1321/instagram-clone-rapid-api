@@ -376,6 +376,21 @@ template {
   background-position: -473px -401px;
 }
 
+[class^="icon-md"] {
+  background-image: url("/public/assets/icons/png/sprite-icons-md.png");
+  height: 62px;
+  width: 62px;
+  background-repeat: no-repeat;
+}
+
+.icon-md__save {
+  background-position: -192px -269px;
+}
+
+.icon-md__tag {
+  background-position: -256px -269px;
+}
+
 [class^="icon-big"] {
   min-height: 96px;
   min-width: 96px;
@@ -448,6 +463,21 @@ svg:hover {
 
 .icon-sm__camera {
   background-position: -473px -401px;
+}
+
+[class^="icon-md"] {
+  background-image: url("/public/assets/icons/png/sprite-icons-md.png");
+  height: 62px;
+  width: 62px;
+  background-repeat: no-repeat;
+}
+
+.icon-md__save {
+  background-position: -192px -269px;
+}
+
+.icon-md__tag {
+  background-position: -256px -269px;
 }
 
 [class^="icon-big"] {
@@ -800,6 +830,157 @@ svg:hover {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+}
+
+.switch-accounts-modal-overlay {
+  visibility: hidden;
+  opacity: 0;
+  position: fixed;
+  z-index: -1;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.75);
+  -webkit-transition: all 500ms ease-in-out;
+  transition: all 500ms ease-in-out;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.switch-accounts-modal {
+  width: 35%;
+  height: 300px;
+  background-color: white;
+  border-radius: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
+
+.switch-accounts-modal__header {
+  padding: 0px 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 1px solid lightgrey;
+}
+
+.switch-accounts-modal__close {
+  cursor: pointer;
+}
+
+.switch-accounts-modal__close span {
+  display: block;
+  width: 40px;
+  border-bottom: 2px solid black;
+  -webkit-transform-origin: 18px 1px;
+          transform-origin: 18px 1px;
+}
+
+.switch-accounts-modal__close span:first-of-type {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.switch-accounts-modal__close span:last-of-type {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.switch-accounts-modal__body {
+  padding: 20px;
+}
+
+.switch-accounts-modal__profile-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.switch-accounts-modal__profile {
+  height: 70px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.switch-accounts-modal__profile h3 {
+  margin-left: 10px;
+}
+
+.switch-accounts-modal__img {
+  overflow: hidden;
+  height: 70px;
+  width: 70px;
+  border-radius: 100%;
+  border: 1px solid grey;
+}
+
+.switch-accounts-modal__img img {
+  width: 100%;
+}
+
+.switch-accounts-modal__footer {
+  margin-top: auto;
+  border-top: 1px solid lightgrey;
+}
+
+.switch-accounts-modal__footer h3 {
+  text-align: center;
+  font-weight: bold;
+  color: #003cff;
 }
 
 .send-modal-overlay {

@@ -27,5 +27,8 @@ router.get('/explore',/*setUserDataContoller,setUserPostsArrayController,*/(req:
 router.get('/profile',(req:Request,res:any)=>{
     res.render('profile',{title:'Profile'})
 })
+router.get('/saved',(req:Request,res:any)=>{
+    res.render('profile',{title:'Saved'})
+})
 
 module.exports = router

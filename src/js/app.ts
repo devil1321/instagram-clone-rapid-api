@@ -24,6 +24,11 @@ class UI_ACTIONS_CLIENT {
     public sendModalOpenBtn: HTMLDivElement;
     public sendModalCloseBtn: HTMLDivElement;
     public sendModal: HTMLDivElement;
+    public switchAccountsModalOpenBtn: HTMLParagraphElement;
+    public switchAccountsModalCloseBtn: HTMLSpanElement;
+    public switchAccountsModal: HTMLDivElement
+    public tabLinks: NodeListOf<HTMLDivElement>
+    public tabs:NodeListOf<HTMLDivElement>
     constructor(){
         this.isHomeOpen = false
         this.isFeedOpen = false
@@ -48,6 +53,11 @@ class UI_ACTIONS_CLIENT {
         this.sendModalOpenBtn = document.querySelector('.inbox__send-message')
         this.sendModalCloseBtn = document.querySelector('.send-modal__close')
         this.sendModal = document.querySelector('.send-modal-overlay')
+        this.switchAccountsModalOpenBtn = document.querySelector('.navbar__switch-accounts-btn')
+        this.switchAccountsModalCloseBtn = document.querySelector('.switch-accounts-modal__close')
+        this.switchAccountsModal = document.querySelector('.switch-accounts-modal-overlay')
+        this.tabLinks = document.querySelectorAll('.profile__tab-link')
+        this.tabs = document.querySelectorAll('.profile__tab')
     }
     isNavOpen = () => {
         if(!this.isHomeOpen){
@@ -147,33 +157,94 @@ class UI_ACTIONS_CLIENT {
             element.style.zIndex = '-1'
         },1000)
     }
+    handleTabLink = (e:any) =>{
+        this.tabLinks.forEach((link:any)=>{
+            link.classList.remove('active')
+        })
+        e.target.classList.add('active')
+    }
+    handleTab = (e:any) =>{
+        const id:string = e.target.dataset.id
+        let activeTab = document.querySelector(`#tab-${id}`) as HTMLDivElement
+        this.tabs.forEach((tab:any)=>{
+            tab.classList.remove('active')
+        })
+        activeTab.classList.add('active')
+    }
+    handleTabChange = () =>{
+        const path = window.location.pathname
+        this.tabs.forEach((tab:any)=>{
+            tab.classList.remove('active')
+        })
+        this.tabLinks.forEach((link:any)=>{
+            link.classList.remove('active')
+        })
+        switch(path){
+            case '/instagram/profile':
+                (function(){
+                    const activeLink = document.getElementById('tab-link-1') as HTMLDivElement
+                    const activeTab = document.getElementById('tab-1') as HTMLDivElement
+                    activeLink.classList.add('active')
+                    activeTab.classList.add('active')
+                }())
+                break
+            case '/instagram/saved':
+                (function(){
+                    const activeLink = document.getElementById('tab-link-2') as HTMLDivElement
+                    const activeTab = document.getElementById('tab-2') as HTMLDivElement
+                    activeLink.classList.add('active')
+                    activeTab.classList.add('active')
+                }())
+                break
+            default:
+                return
+        }
+
+    }
 }
 
 
 const UI_CLIENT = new UI_ACTIONS_CLIENT
 
 UI_CLIENT.handleIconsChange()
+UI_CLIENT.handleTabChange()
 UI_CLIENT.navbarFeedIcon.addEventListener('click',UI_CLIENT.handleChangeFeedIcon)
 UI_CLIENT.profileBtn.addEventListener('click',UI_CLIENT.handleProfileMenu)
 UI_CLIENT.navbarAddPostIcon.addEventListener('click',UI_CLIENT.handlePostIcon)
 UI_CLIENT.navbar.addEventListener('click',UI_CLIENT.isNavOpen)
-UI_CLIENT.viewComments.forEach((item:any)=>{
-    item.addEventListener('click',UI_CLIENT.handlePostModalOpen)
-})
-UI_CLIENT.postMoreInfo.forEach((item:any) =>{
-    item.addEventListener('click',UI_CLIENT.handleInfo)
-})
-UI_CLIENT.postModalClose.forEach((item:any)=>{
-    item.addEventListener('click',UI_CLIENT.handlePostModalClose)
-})
 UI_CLIENT.navbarAddPostIcon.addEventListener('click',()=> UI_CLIENT.handleOpenModal(UI_CLIENT.addPostModal))
+
 UI_CLIENT.closeAddPostModal.addEventListener('click',()=> {
     UI_CLIENT.handleCloseModal(UI_CLIENT.addPostModal)
     UI_CLIENT.handlePostIcon()
 })
+
+UI_CLIENT.switchAccountsModalOpenBtn.addEventListener('click',()=>UI_CLIENT.handleOpenModal(UI_CLIENT.switchAccountsModal))
+UI_CLIENT.switchAccountsModalCloseBtn.addEventListener('click',()=>UI_CLIENT.handleCloseModal(UI_CLIENT.switchAccountsModal))
+
+if(UI_CLIENT.postMoreInfo && UI_CLIENT.postModalClose){
+    UI_CLIENT.viewComments.forEach((item:any)=>{
+        item.addEventListener('click',UI_CLIENT.handlePostModalOpen)
+    })
+    UI_CLIENT.postMoreInfo.forEach((item:any) =>{
+        item.addEventListener('click',UI_CLIENT.handleInfo)
+    })
+    UI_CLIENT.postModalClose.forEach((item:any)=>{
+        item.addEventListener('click',UI_CLIENT.handlePostModalClose)
+    })
+}
+
 if(UI_CLIENT.sendModalOpenBtn){
     UI_CLIENT.sendModalOpenBtn.addEventListener('click',()=>UI_CLIENT.handleOpenModal(UI_CLIENT.sendModal))
 }
 if(UI_CLIENT.sendModalCloseBtn){
     UI_CLIENT.sendModalCloseBtn.addEventListener('click',()=>UI_CLIENT.handleCloseModal(UI_CLIENT.sendModal))
+}
+if(UI_CLIENT.tabLinks){
+    UI_CLIENT.tabLinks.forEach((link:any)=>{
+        link.addEventListener('click',(e:any)=>{
+            UI_CLIENT.handleTabLink(e)
+            UI_CLIENT.handleTab(e)
+        })
+    })
 }

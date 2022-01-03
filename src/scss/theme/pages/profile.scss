@@ -2,9 +2,151 @@
 @import '../components/navbar';
 @import '../components/card';
 @import '../components/add-post-modal';
+@import '../components/switch-accounts-modal';
+
 
 .profile{
-    &__cards{
+    padding:0px 200px;
+    h1{
+        font-weight: 400;
+    }
+    &__info{
+        padding:30px 100px;
+        @include createFlex(row,flex-start,center,null);
+    }
+    &__info-main{
+        margin-left: 100px;
+    }
+    &__info-group{
+        @include createFlex(row,space-between,center,null);
+        button{
+            @include white-btn();
+        }
+        svg{
+            width: 30px;
+            height:30px;
+        }
+    }
+    &__img{
+        width: 160px;
+        height:160px;
+        overflow: hidden;
+        border-radius: 100%;
+        img{
+            width: 100%;
+        }
+    }
+    &__tabs-nav{
+        border-top: 1px solid lightgrey;
+        @include createFlex(row,center,center,null)
+    }
+    &__tab-link{
+        padding:20px 0px;
+        font-size: pxToRem(16);
+        letter-spacing: 1px;
+        font-weight: bold;
+        cursor: pointer;
+        margin:0px 30px;
+        position: relative;
+        top:-2px;
+        left:0px;
+        color:grey;
         @include createFlex(row,center,center,null);
+        &:before{
+            content:'';
+            position:absolute;
+            top:0px;
+            left:0px;
+            width:100%;
+        }
+        &.active{
+            svg{
+                color:black;
+
+            }
+            &:before{
+                border-top: 2px solid black;
+            }
+        }
+        svg{
+            margin-right:5px;
+            pointer-events: none;
+        }
+    }
+    &__tab{
+        height:350px;
+        position: relative;
+        top:-20px;
+        left:0px;
+        opacity:0;
+        transition:all 0.3s ease-in-out;
+        text-align: center;
+        transition: active 0.3s e;
+        animation: show-tab 0.3s ease-in-out forwards;
+        @include createFlex(column,center,center,null);
+        display:none;
+        &.active{
+            display:flex;
+        }
+        &-header{
+            height:100px;
+            width: 100%;
+            @include createFlex(row,space-between,center,null);
+        }
+        &-body{
+            width: 50%;
+            height:250px;
+            @include createFlex(column,center,center,null);
+            p{
+                line-height: 1.5;
+            }
+        }
+        button{
+            font-weight: bold;
+            color:$blue;
+            background-color: #f9f9f9;
+            border:0px;
+            outline:none;
+            &:active,&:focus{
+                border:0px;
+                outline:none;
+            }
+            i{
+                color:$blue;
+            }
+        }
+        @keyframes show-tab{
+            0%{
+                opacity:0
+            }
+            100%{
+                opacity:1;
+            }
+        }
+    }
+    &__cards{
+        width: 100%;
+        @include createFlex(row,space-between,center,null);
+        .card{
+            margin:0px;
+        }
+    }
+    &__tab{
+        padding:0px 20px;
+    }
+    &__footer{
+        margin:50px 0px 10px;
+        width: 100%;
+        text-align: center;
+        a{
+            color:grey;
+        }
+    }
+    &__foot{
+        padding-bottom: 50px;
+        text-align: center;
+        span{
+            color:grey;
+        }
     }
 }

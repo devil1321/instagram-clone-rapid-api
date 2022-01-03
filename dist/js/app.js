@@ -98,6 +98,49 @@ class UI_ACTIONS_CLIENT {
                 element.style.zIndex = '-1';
             }, 1000);
         };
+        this.handleTabLink = (e) => {
+            this.tabLinks.forEach((link) => {
+                link.classList.remove('active');
+            });
+            e.target.classList.add('active');
+        };
+        this.handleTab = (e) => {
+            const id = e.target.dataset.id;
+            let activeTab = document.querySelector(`#tab-${id}`);
+            this.tabs.forEach((tab) => {
+                tab.classList.remove('active');
+            });
+            activeTab.classList.add('active');
+        };
+        this.handleTabChange = () => {
+            const path = window.location.pathname;
+            this.tabs.forEach((tab) => {
+                tab.classList.remove('active');
+            });
+            this.tabLinks.forEach((link) => {
+                link.classList.remove('active');
+            });
+            switch (path) {
+                case '/instagram/profile':
+                    (function () {
+                        const activeLink = document.getElementById('tab-link-1');
+                        const activeTab = document.getElementById('tab-1');
+                        activeLink.classList.add('active');
+                        activeTab.classList.add('active');
+                    }());
+                    break;
+                case '/instagram/saved':
+                    (function () {
+                        const activeLink = document.getElementById('tab-link-2');
+                        const activeTab = document.getElementById('tab-2');
+                        activeLink.classList.add('active');
+                        activeTab.classList.add('active');
+                    }());
+                    break;
+                default:
+                    return;
+            }
+        };
         this.isHomeOpen = false;
         this.isFeedOpen = false;
         this.isAddPostOpen = false;
@@ -121,31 +164,49 @@ class UI_ACTIONS_CLIENT {
         this.sendModalOpenBtn = document.querySelector('.inbox__send-message');
         this.sendModalCloseBtn = document.querySelector('.send-modal__close');
         this.sendModal = document.querySelector('.send-modal-overlay');
+        this.switchAccountsModalOpenBtn = document.querySelector('.navbar__switch-accounts-btn');
+        this.switchAccountsModalCloseBtn = document.querySelector('.switch-accounts-modal__close');
+        this.switchAccountsModal = document.querySelector('.switch-accounts-modal-overlay');
+        this.tabLinks = document.querySelectorAll('.profile__tab-link');
+        this.tabs = document.querySelectorAll('.profile__tab');
     }
 }
 const UI_CLIENT = new UI_ACTIONS_CLIENT;
 UI_CLIENT.handleIconsChange();
+UI_CLIENT.handleTabChange();
 UI_CLIENT.navbarFeedIcon.addEventListener('click', UI_CLIENT.handleChangeFeedIcon);
 UI_CLIENT.profileBtn.addEventListener('click', UI_CLIENT.handleProfileMenu);
 UI_CLIENT.navbarAddPostIcon.addEventListener('click', UI_CLIENT.handlePostIcon);
 UI_CLIENT.navbar.addEventListener('click', UI_CLIENT.isNavOpen);
-UI_CLIENT.viewComments.forEach((item) => {
-    item.addEventListener('click', UI_CLIENT.handlePostModalOpen);
-});
-UI_CLIENT.postMoreInfo.forEach((item) => {
-    item.addEventListener('click', UI_CLIENT.handleInfo);
-});
-UI_CLIENT.postModalClose.forEach((item) => {
-    item.addEventListener('click', UI_CLIENT.handlePostModalClose);
-});
 UI_CLIENT.navbarAddPostIcon.addEventListener('click', () => UI_CLIENT.handleOpenModal(UI_CLIENT.addPostModal));
 UI_CLIENT.closeAddPostModal.addEventListener('click', () => {
     UI_CLIENT.handleCloseModal(UI_CLIENT.addPostModal);
     UI_CLIENT.handlePostIcon();
 });
+UI_CLIENT.switchAccountsModalOpenBtn.addEventListener('click', () => UI_CLIENT.handleOpenModal(UI_CLIENT.switchAccountsModal));
+UI_CLIENT.switchAccountsModalCloseBtn.addEventListener('click', () => UI_CLIENT.handleCloseModal(UI_CLIENT.switchAccountsModal));
+if (UI_CLIENT.postMoreInfo && UI_CLIENT.postModalClose) {
+    UI_CLIENT.viewComments.forEach((item) => {
+        item.addEventListener('click', UI_CLIENT.handlePostModalOpen);
+    });
+    UI_CLIENT.postMoreInfo.forEach((item) => {
+        item.addEventListener('click', UI_CLIENT.handleInfo);
+    });
+    UI_CLIENT.postModalClose.forEach((item) => {
+        item.addEventListener('click', UI_CLIENT.handlePostModalClose);
+    });
+}
 if (UI_CLIENT.sendModalOpenBtn) {
     UI_CLIENT.sendModalOpenBtn.addEventListener('click', () => UI_CLIENT.handleOpenModal(UI_CLIENT.sendModal));
 }
 if (UI_CLIENT.sendModalCloseBtn) {
     UI_CLIENT.sendModalCloseBtn.addEventListener('click', () => UI_CLIENT.handleCloseModal(UI_CLIENT.sendModal));
+}
+if (UI_CLIENT.tabLinks) {
+    UI_CLIENT.tabLinks.forEach((link) => {
+        link.addEventListener('click', (e) => {
+            UI_CLIENT.handleTabLink(e);
+            UI_CLIENT.handleTab(e);
+        });
+    });
 }

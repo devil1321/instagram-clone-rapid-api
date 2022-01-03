@@ -22,4 +22,7 @@ router.get('/explore', /*setUserDataContoller,setUserPostsArrayController,*/ (re
 router.get('/profile', (req, res) => {
     res.render('profile', { title: 'Profile' });
 });
+router.get('/saved', (req, res) => {
+    res.render('profile', { title: 'Saved' });
+});
 module.exports = router;
