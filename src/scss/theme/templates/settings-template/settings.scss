@@ -1,0 +1,57 @@
+@import '../../global';
+@import '../../mixins';
+@import '../../components/navbar';
+@import '../../components/add-post-modal';
+@import '../../components/switch-accounts-modal';
+
+.settings{
+    padding:0px 200px;
+    &__tabs-wrapper{
+        margin-top: 40px;
+        width: 100%;
+        height:100%;
+        border:1px solid lightgrey;
+        background-color: white;
+        @include createFlex(row,flex-start,stretch,null);
+    }
+    &__tab-nav{
+        padding-bottom:40px;
+        box-sizing:border-box;
+        width: 28%;
+        border-right: 1px solid lightgrey;
+        @include createFlex(column,space-between,center,null);
+    }
+    &__tab-link{
+        display: block;
+        padding:17px 30px;
+        color:black;
+        border-left:2px solid white;
+        &:hover{
+            border-left:2px solid lightgrey;
+        }
+        &.active{
+            border-left:2px solid black;
+            font-weight: bold;
+
+        }
+        &.blue{
+            color:$blue;
+            font-weight: bold;
+        }
+    }
+    &__tab-footer{
+        padding:0px 30px;
+        svg,h3,p{
+            margin:5px 0px;
+        }
+        h3{
+            color:$blue;
+        }
+        p{
+            color:grey;
+        }
+    }
+    &__tab{
+        width: 70%;
+    }
+}
