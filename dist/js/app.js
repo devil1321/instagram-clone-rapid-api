@@ -141,6 +141,44 @@ class UI_ACTIONS_CLIENT {
                     return;
             }
         };
+        this.handleSettingsActiveLink = () => {
+            const path = window.location.pathname;
+            switch (path) {
+                case '/settings/edit-profile':
+                    this.settingsNavLinks[0].classList.add('active');
+                    break;
+                case '/settings/change-password':
+                    this.settingsNavLinks[1].classList.add('active');
+                    break;
+                case '/settings/manage-access':
+                    this.settingsNavLinks[2].classList.add('active');
+                    break;
+                case '/settings/email-and-sms':
+                    this.settingsNavLinks[3].classList.add('active');
+                    break;
+                case '/settings/push-notifications':
+                    this.settingsNavLinks[4].classList.add('active');
+                    break;
+                case '/settings/manage-contacts':
+                    this.settingsNavLinks[5].classList.add('active');
+                    break;
+                case '/settings/privacy-and-security':
+                    this.settingsNavLinks[6].classList.add('active');
+                    break;
+                case '/settings/emails-from-instagram':
+                    this.settingsNavLinks[7].classList.add('active');
+                    break;
+                case '/settings/emails-from-instagram':
+                    this.settingsNavLinks[8].classList.add('active');
+                    break;
+                case '/settings/help':
+                    this.settingsNavLinks[9].classList.add('active');
+                    break;
+                case '/settings/switch-to-proffesional-account':
+                    this.settingsNavLinks[10].classList.add('active');
+                    break;
+            }
+        };
         this.isHomeOpen = false;
         this.isFeedOpen = false;
         this.isAddPostOpen = false;
@@ -169,6 +207,7 @@ class UI_ACTIONS_CLIENT {
         this.switchAccountsModal = document.querySelector('.switch-accounts-modal-overlay');
         this.tabLinks = document.querySelectorAll('.profile__tab-link');
         this.tabs = document.querySelectorAll('.profile__tab');
+        this.settingsNavLinks = document.querySelectorAll('.settings__tab-link');
     }
 }
 const UI_CLIENT = new UI_ACTIONS_CLIENT;
@@ -209,4 +248,7 @@ if (UI_CLIENT.tabLinks) {
             UI_CLIENT.handleTab(e);
         });
     });
+}
+if (UI_CLIENT.settingsNavLinks) {
+    UI_CLIENT.handleSettingsActiveLink();
 }

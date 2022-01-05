@@ -1,0 +1,189 @@
+.edit-profile-tab {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 20px 50px;
+}
+
+.edit-profile-tab__header {
+  margin: 10px 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.edit-profile-tab__header h1, .edit-profile-tab__header h3 {
+  margin: 5px 0px;
+}
+
+.edit-profile-tab__header h1 {
+  font-size: 1.25rem;
+}
+
+.edit-profile-tab__header h3 {
+  color: #003cff;
+  font-size: 1rem;
+}
+
+.edit-profile-tab__header-text {
+  margin-left: 105px;
+}
+
+.edit-profile-tab__img {
+  overflow: hidden;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+}
+
+.edit-profile-tab__img img {
+  width: 100%;
+}
+
+.edit-profile-tab__form label {
+  position: relative;
+  top: 20px;
+  left: 0px;
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+  margin-right: 40px;
+  font-weight: bold;
+}
+
+.edit-profile-tab__form input, .edit-profile-tab__form textarea {
+  padding-left: 10px;
+  margin: 5px 0px;
+  width: 100%;
+  height: 40px;
+  -webkit-box-shadow: 0px 0px 1px grey;
+          box-shadow: 0px 0px 1px grey;
+  border: 1px solid white;
+  border-radius: 2px;
+  max-width: calc(70%);
+}
+
+.edit-profile-tab__form input:focus, .edit-profile-tab__form textarea:focus {
+  outline: none;
+  border: 1px solid lightgray;
+}
+
+.edit-profile-tab__form textarea {
+  height: 70px;
+}
+
+.edit-profile-tab__form h3 {
+  font-size: 0.875rem;
+}
+
+.edit-profile-tab__form p {
+  color: grey;
+}
+
+.edit-profile-tab__form a {
+  color: #003cff;
+}
+
+.edit-profile-tab__field {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.edit-profile-tab__field:nth-of-type(8) input {
+  margin-top: 30px;
+  margin-right: 5px;
+  border: 0px;
+  min-width: 20px;
+  background-color: transparent;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.edit-profile-tab__field:nth-of-type(8) div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.edit-profile-tab__field:nth-of-type(8) div label {
+  margin-top: -3px;
+  display: block;
+  left: 0px;
+  max-width: 200px;
+}
+
+.edit-profile-tab__field:nth-of-type(8) div label span {
+  cursor: pointer;
+  margin-left: 3px;
+  color: #003cff;
+}
+
+.edit-profile-tab__footer {
+  margin-top: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.edit-profile-tab__footer button {
+  cursor: pointer;
+  margin: 10px 0px;
+  height: 40px;
+  width: 105%;
+  font-weight: bold;
+  background-color: #80eff3;
+  color: white;
+  border: 0px;
+  border-radius: 5px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  background-color: #003cff;
+}
+
+.edit-profile-tab__footer p {
+  font-weight: bold;
+  color: #003cff;
+  font-size: 1rem;
+}
+/*# sourceMappingURL=edit-profile-tab.css.map */

@@ -19,7 +19,7 @@ const isAuthenticated = require('./modules/controllers/isAuthenticated.controlle
 
 const authRoutes = require('./routes/auth.routes')
 const instagramRoutes = require('./routes/instagram.routes')
-
+const settingsRoutes = require('./routes/settings.routes')
 
 require('dotenv').config({path:path.resolve(__dirname, '../.env')})
 
@@ -46,6 +46,8 @@ app.get('/',(req:any,res:any)=>{
 app.use('/instagram/auth',authRoutes)
 
 app.use('/instagram', /* isAuthenticated,*/ instagramRoutes)
+
+app.use('/settings',settingsRoutes)
 
 app.listen(PORTHTTPS,(req:Request,res:Response)=>{
     console.log('http server started at port ' + PORTHTTPS)

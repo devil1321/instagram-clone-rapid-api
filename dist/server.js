@@ -14,6 +14,7 @@ const cookieSession = require('cookie-session');
 const isAuthenticated = require('./modules/controllers/isAuthenticated.controller');
 const authRoutes = require('./routes/auth.routes');
 const instagramRoutes = require('./routes/instagram.routes');
+const settingsRoutes = require('./routes/settings.routes');
 require('dotenv').config({ path: path.resolve(__dirname, '../.env') });
 const PORTHTTPS = process.env.PORT || 8000;
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -32,6 +33,7 @@ app.get('/', (req, res) => {
 });
 app.use('/instagram/auth', authRoutes);
 app.use('/instagram', /* isAuthenticated,*/ instagramRoutes);
+app.use('/settings', settingsRoutes);
 app.listen(PORTHTTPS, (req, res) => {
     console.log('http server started at port ' + PORTHTTPS);
 });
