@@ -1,0 +1,11 @@
+{
+    "version": 3,
+    "mappings": "AAGA,AAAA,cAAc,CAAA;EACV,OAAO,EAAC,QAAQ;CAcnB;;AAfD,AAEI,cAFU,CAEV,EAAE,CAAA;EACE,WAAW,EAAC,GAAG;CAClB;;AACA,AAAD,qBAAQ,CAAA;EACJ,MAAM,EAAC,QAAQ;CAQlB;;AATA,AAEG,qBAFI,CAEJ,KAAK,CAAA;EACD,WAAW,EAAE,IAAI;CACpB;;AAJJ,AAKG,qBALI,CAKJ,CAAC,CAAA;EACG,MAAM,EAAC,OAAO;EACd,KAAK,EAAC,IAAI;CACb",
+    "sources": [
+        "../../src/scss/theme/components/settings-template/emails-and-sms-tab.scss",
+        "../../src/scss/theme/_mixins.scss",
+        "../../src/scss/theme/_variables.scss"
+    ],
+    "names": [],
+    "file": "emails-and-sms-tab.css"
+}

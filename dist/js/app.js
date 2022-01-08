@@ -165,7 +165,7 @@ class UI_ACTIONS_CLIENT {
                 case '/settings/privacy-and-security':
                     this.settingsNavLinks[6].classList.add('active');
                     break;
-                case '/settings/emails-from-instagram':
+                case '/settings/login-activity':
                     this.settingsNavLinks[7].classList.add('active');
                     break;
                 case '/settings/emails-from-instagram':
@@ -178,6 +178,16 @@ class UI_ACTIONS_CLIENT {
                     this.settingsNavLinks[10].classList.add('active');
                     break;
             }
+        };
+        this.handleManageAccessTab = (e) => {
+            const tabId = e.target.dataset.id;
+            const activeTab = document.querySelector(`#tab-${tabId}`);
+            this.manageAccessTabLinks.forEach((link) => {
+                link.classList.remove('active');
+            });
+            e.target.classList.add('active');
+            this.manageAccessTabs.forEach((tab) => tab.classList.remove('active'));
+            activeTab.classList.add('active');
         };
         this.isHomeOpen = false;
         this.isFeedOpen = false;
@@ -208,6 +218,8 @@ class UI_ACTIONS_CLIENT {
         this.tabLinks = document.querySelectorAll('.profile__tab-link');
         this.tabs = document.querySelectorAll('.profile__tab');
         this.settingsNavLinks = document.querySelectorAll('.settings__tab-link');
+        this.manageAccessTabLinks = document.querySelectorAll('.manage-access-tab__tab-inner-link');
+        this.manageAccessTabs = document.querySelectorAll('.manage-access-tab__tab');
     }
 }
 const UI_CLIENT = new UI_ACTIONS_CLIENT;
@@ -251,4 +263,9 @@ if (UI_CLIENT.tabLinks) {
 }
 if (UI_CLIENT.settingsNavLinks) {
     UI_CLIENT.handleSettingsActiveLink();
+}
+if (UI_CLIENT.manageAccessTabLinks) {
+    UI_CLIENT.manageAccessTabLinks.forEach((link) => {
+        link.addEventListener('click', (e) => UI_CLIENT.handleManageAccessTab(e));
+    });
 }

@@ -1,0 +1,11 @@
+{
+    "version": 3,
+    "mappings": "AAGA,AAAA,uBAAuB,CAAA;EACnB,OAAO,EAAC,QAAQ;CAenB;;AAdI,AAAD,6BAAO,CAAA;EACH,OAAO,EAAC,QAAQ;EAChB,aAAa,EAAE,mBAAmB;CAIrC;;AANA,AAGG,6BAHG,CAGH,EAAE,CAAA;EACE,WAAW,EAAE,GAAG;CACnB;;AAEJ,AAAD,8BAAQ,CAAA;EACJ,MAAM,EAAC,OAAO;ECqBlB,OAAO,EAAE,IAAI;EAET,cAAc,EDtBM,GAAG;ECyBvB,eAAe,EDzBS,UAAU;EC4BlC,WAAW,ED5BwB,MAAM;CAI5C;;AANA,AAGG,8BAHI,CAGJ,KAAK,CAAA;EACD,WAAW,EAAE,GAAG;CACnB",
+    "sources": [
+        "../../src/scss/theme/components/settings-template/push-notifications-tab.scss",
+        "../../src/scss/theme/_mixins.scss",
+        "../../src/scss/theme/_variables.scss"
+    ],
+    "names": [],
+    "file": "push-notifications-tab.css"
+}

@@ -1,0 +1,21 @@
+@import '../../mixins';
+@import '../../variables';
+
+.privacy-and-security{
+    padding:0px 50px;
+    a{
+        color:$blue;
+    }
+    &__item{
+        padding:20px 0px;
+        border-bottom: 1px solid lightgrey;
+    }
+    &__field{
+        margin:5px 0px;
+        @include createFlex(row,flex-start,center,null);
+        label{
+            font-weight: bold;
+            margin-left: 5px;
+        }
+    }
+}

@@ -1,0 +1,17 @@
+@import '../../mixins';
+@import '../../variables';
+
+.help-tab{
+    padding:0px 50px;
+    h1{
+        font-weight:300;
+    }
+    &__field{
+        cursor: pointer;
+        padding:10px;
+        @include createFlex(row,space-between,center,null);
+        &:hover{
+            background-color: #f9f9f9;
+        }
+    }
+}

@@ -30,6 +30,8 @@ class UI_ACTIONS_CLIENT {
     public tabLinks: NodeListOf<HTMLDivElement>
     public tabs:NodeListOf<HTMLDivElement>
     public settingsNavLinks:NodeListOf<HTMLDivElement>
+    public manageAccessTabLinks: NodeListOf<HTMLDivElement>
+    public manageAccessTabs:NodeListOf<HTMLDivElement>
     constructor(){
         this.isHomeOpen = false
         this.isFeedOpen = false
@@ -60,6 +62,8 @@ class UI_ACTIONS_CLIENT {
         this.tabLinks = document.querySelectorAll('.profile__tab-link')
         this.tabs = document.querySelectorAll('.profile__tab')
         this.settingsNavLinks = document.querySelectorAll('.settings__tab-link')
+        this.manageAccessTabLinks = document.querySelectorAll('.manage-access-tab__tab-inner-link')
+        this.manageAccessTabs = document.querySelectorAll('.manage-access-tab__tab')
     }
     isNavOpen = () => {
         if(!this.isHomeOpen){
@@ -228,7 +232,7 @@ class UI_ACTIONS_CLIENT {
             case '/settings/privacy-and-security':
                 this.settingsNavLinks[6].classList.add('active')
                 break
-            case '/settings/emails-from-instagram':
+            case '/settings/login-activity':
                 this.settingsNavLinks[7].classList.add('active')
                 break
             case '/settings/emails-from-instagram':
@@ -241,6 +245,16 @@ class UI_ACTIONS_CLIENT {
                 this.settingsNavLinks[10].classList.add('active')
                 break
         }
+    }
+    handleManageAccessTab = (e:any) =>{
+        const tabId = e.target.dataset.id
+        const activeTab = document.querySelector(`#tab-${tabId}`) as HTMLDivElement
+        this.manageAccessTabLinks.forEach((link:any)=>{
+            link.classList.remove('active')
+        })
+        e.target.classList.add('active')
+        this.manageAccessTabs.forEach((tab:any)=>tab.classList.remove('active'))
+        activeTab.classList.add('active')
     }
 }
 
@@ -291,4 +305,10 @@ if(UI_CLIENT.tabLinks){
 }
 if(UI_CLIENT.settingsNavLinks){
     UI_CLIENT.handleSettingsActiveLink()
+}
+
+if(UI_CLIENT.manageAccessTabLinks){
+    UI_CLIENT.manageAccessTabLinks.forEach((link:any)=>{
+        link.addEventListener('click',(e:any)=>UI_CLIENT.handleManageAccessTab(e))
+    })
 }

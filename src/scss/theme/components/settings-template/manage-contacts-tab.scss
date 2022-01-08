@@ -1,0 +1,34 @@
+@import '../../mixins';
+@import '../../variables';
+.manage-contacts-tab{
+    padding:0px 50px;
+    h1{
+        font-weight:300;
+    }
+    &__feature{
+        p{
+            padding:40px 0px;
+            border-bottom: 1px solid lightgrey;
+            border-top:1px solid lightgrey;
+        }
+    }
+    &__feature-header{
+        @include createFlex(row,space-between,center,null);
+        button{
+            font-weight:bold;
+            border:0px;
+            outline:none;
+            background-color: transparent;
+            color:$sky-blue;
+            &:focus,&:active{
+                border:0px;
+                outline:none;
+            }
+        }
+    }
+    &__btn{
+        @include blue-btn();
+        width: fit-content;
+        padding:5px 10px;
+    }
+}

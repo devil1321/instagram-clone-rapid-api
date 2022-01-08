@@ -1,0 +1,59 @@
+.manage-contacts-tab {
+  padding: 0px 50px;
+}
+
+.manage-contacts-tab h1 {
+  font-weight: 300;
+}
+
+.manage-contacts-tab__feature p {
+  padding: 40px 0px;
+  border-bottom: 1px solid lightgrey;
+  border-top: 1px solid lightgrey;
+}
+
+.manage-contacts-tab__feature-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.manage-contacts-tab__feature-header button {
+  font-weight: bold;
+  border: 0px;
+  outline: none;
+  background-color: transparent;
+  color: #80eff3;
+}
+
+.manage-contacts-tab__feature-header button:focus, .manage-contacts-tab__feature-header button:active {
+  border: 0px;
+  outline: none;
+}
+
+.manage-contacts-tab__btn {
+  cursor: pointer;
+  margin: 10px 0px;
+  height: 40px;
+  width: 105%;
+  font-weight: bold;
+  background-color: #80eff3;
+  color: white;
+  border: 0px;
+  border-radius: 5px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 5px 10px;
+}
+/*# sourceMappingURL=manage-contacts-tab.css.map */

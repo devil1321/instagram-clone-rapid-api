@@ -1,0 +1,8 @@
+@import '../../mixins';
+@import '../../variables';
+
+.login-activity-tab{
+    width: 100%;
+    height:90vh;
+    @include createFlex(row,center,center,null);
+}

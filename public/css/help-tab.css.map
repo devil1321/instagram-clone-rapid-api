@@ -1,0 +1,11 @@
+{
+    "version": 3,
+    "mappings": "AAGA,AAAA,SAAS,CAAA;EACL,OAAO,EAAC,QAAQ;CAYnB;;AAbD,AAEI,SAFK,CAEL,EAAE,CAAA;EACE,WAAW,EAAC,GAAG;CAClB;;AACA,AAAD,gBAAQ,CAAA;EACJ,MAAM,EAAE,OAAO;EACf,OAAO,EAAC,IAAI;ECwBhB,OAAO,EAAE,IAAI;EAET,cAAc,EDzBM,GAAG;EC4BvB,eAAe,ED5BS,aAAa;EC+BrC,WAAW,ED/B2B,MAAM;CAI/C;;AAPA,AAIG,gBAJI,AAIH,MAAM,CAAA;EACH,gBAAgB,EAAE,OAAO;CAC5B",
+    "sources": [
+        "../../src/scss/theme/components/settings-template/help-tab.scss",
+        "../../src/scss/theme/_mixins.scss",
+        "../../src/scss/theme/_variables.scss"
+    ],
+    "names": [],
+    "file": "help-tab.css"
+}

@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../../src/scss/theme/pages/switch-to-proffessional-account.scss"
+    ],
+    "names": [],
+    "file": "switch-to-proffessional-account.css"
+}

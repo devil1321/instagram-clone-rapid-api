@@ -11,7 +11,7 @@
        {link:'Manage Contacts',href:'/settings/manage-contacts'}, 
        {link:'Privacy and Security',href:'/settings/privacy-and-security'}, 
        {link:'Login Activity',href:'/settings/login-activity'}, 
-       {link:'Email from Instagram',href:'/settings/emails-from-instagram'}, 
+       {link:'Emails from Instagram',href:'/settings/emails-from-instagram'}, 
        {link:'Help',href:'/settings/help'}, 
        {link:'Switch to Proffesional Account', href:'/settings/switch-to-proffesional-account'} 
      ] %>
@@ -23,7 +23,7 @@
                    <% if(index !== tabLinks.length - 1) { %>
                         <a href="<%= item.href %>" class="settings__tab-link" id="<%= index %>"><%= item.link %></a>
                     <% } else { %>
-                            <a href="<%= item.href %>" class="settings__tab-link blue" id="<%= index %>"><%= item.link %></a>
+                            <a href="<%= item.href %>" class="settings__link" id="<%= index %>"><%= item.link %></a>
                     <% } %>    
                     <% }) %>
                 </div>

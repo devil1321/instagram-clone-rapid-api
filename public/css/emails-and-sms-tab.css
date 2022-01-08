@@ -1,0 +1,21 @@
+.email-and-sms {
+  padding: 0px 70px;
+}
+
+.email-and-sms h1 {
+  font-weight: 300;
+}
+
+.email-and-sms__field {
+  margin: 30px 0px;
+}
+
+.email-and-sms__field label {
+  font-weight: bold;
+}
+
+.email-and-sms__field p {
+  margin: 5px 0px;
+  color: grey;
+}
+/*# sourceMappingURL=emails-and-sms-tab.css.map */

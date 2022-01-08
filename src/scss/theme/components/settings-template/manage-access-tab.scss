@@ -1,0 +1,106 @@
+@import '../../mixins';
+@import '../../variables';
+.manage-access-tab{
+    padding:0px 60px;
+    h1{
+        font-weight: 300;
+    }
+    a{
+        color:$blue;
+    }
+    &__tabs-inner-nav{
+        width: 100%;
+        @include createFlex(row,center,center,null);
+        border-bottom: 1px solid lightgrey;
+    }
+    &__tab-inner-link{
+        cursor: pointer;
+        text-align: center;
+        font-weight: bold;
+        padding:20px 0px;
+        width: calc(100% / 4);
+        border:1px solid white;
+        color:grey;
+        transition: all 0.3s ease-in-out;
+        &.active{
+            color:black;
+            border-bottom: 1px solid black;
+        }
+    }
+    &__tab{
+        display:none;
+        transition:all 0.3s ease-in-out;
+        &.active{
+            display: block;
+        }
+        &:last-of-type{
+            h3,p{
+                margin:3px 0px;
+            }
+            h3{
+                margin-top: 20px;
+            }
+            button{
+                font-weight: bold;
+                color:white;
+                margin-top:20px;
+                padding:15px;
+                background-color: $blue;
+                border:0px;
+                border-radius: 5px;
+                &:active,&:active{
+                    outline:none;
+                    border:0px;
+                }
+            }
+        }
+    }
+    &__body{
+        margin:30px 0px;
+        @include createFlex(row,space-between,center,null);
+    }
+    &__body-app{
+        @include createFlex(row,flex-start,center,null);
+        h3,p,a{
+            margin:5px 0px;
+            display: block;
+        }
+    }
+    &__body-text{
+        margin-left: 20px;
+    }
+    &__img{
+        overflow:hidden;
+        width: 80px;
+        height:80px;
+        border-radius: 100%;
+        img{
+            width: 100%;
+        }
+    }
+    &__btn-group{
+        button{
+            margin:5px 0px;
+            display: block;
+            padding:3px 0px;
+            width: 110px;
+            border:0px;
+            border-radius: 5px;
+            &:active,&:active{
+                outline:none;
+                border:0px;
+            }
+            &:first-of-type{
+                background-color: $blue;
+                color:white;
+            }
+            &:last-of-type{
+                color:black;
+                border: 1px solid lightgray;
+            }
+        }
+    }
+    &__text-grey{
+        color:grey;
+    }
+}

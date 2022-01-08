@@ -1,0 +1,11 @@
+{
+    "version": 3,
+    "mappings": "AAGA,AAAA,WAAW,CAAA;EACP,KAAK,EAAE,IAAI;EACX,MAAM,EAAC,IAAI;EC6BX,OAAO,EAAE,IAAI;EAET,cAAc,ED9BE,GAAG;ECiCnB,eAAe,EDjCK,MAAM;ECoC1B,WAAW,EDpCgB,MAAM;CACxC",
+    "sources": [
+        "../../src/scss/theme/components/settings-template/emails-tab.scss",
+        "../../src/scss/theme/_mixins.scss",
+        "../../src/scss/theme/_variables.scss"
+    ],
+    "names": [],
+    "file": "emails-tab.css"
+}

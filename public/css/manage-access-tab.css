@@ -1,0 +1,161 @@
+.manage-access-tab {
+  padding: 0px 60px;
+}
+
+.manage-access-tab h1 {
+  font-weight: 300;
+}
+
+.manage-access-tab a {
+  color: #003cff;
+}
+
+.manage-access-tab__tabs-inner-nav {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 1px solid lightgrey;
+}
+
+.manage-access-tab__tab-inner-link {
+  cursor: pointer;
+  text-align: center;
+  font-weight: bold;
+  padding: 20px 0px;
+  width: calc(100% / 4);
+  border: 1px solid white;
+  color: grey;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.manage-access-tab__tab-inner-link.active {
+  color: black;
+  border-bottom: 1px solid black;
+}
+
+.manage-access-tab__tab {
+  display: none;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.manage-access-tab__tab.active {
+  display: block;
+}
+
+.manage-access-tab__tab:last-of-type h3, .manage-access-tab__tab:last-of-type p {
+  margin: 3px 0px;
+}
+
+.manage-access-tab__tab:last-of-type h3 {
+  margin-top: 20px;
+}
+
+.manage-access-tab__tab:last-of-type button {
+  font-weight: bold;
+  color: white;
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #003cff;
+  border: 0px;
+  border-radius: 5px;
+}
+
+.manage-access-tab__tab:last-of-type button:active, .manage-access-tab__tab:last-of-type button:active {
+  outline: none;
+  border: 0px;
+}
+
+.manage-access-tab__body {
+  margin: 30px 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.manage-access-tab__body-app {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.manage-access-tab__body-app h3, .manage-access-tab__body-app p, .manage-access-tab__body-app a {
+  margin: 5px 0px;
+  display: block;
+}
+
+.manage-access-tab__body-text {
+  margin-left: 20px;
+}
+
+.manage-access-tab__img {
+  overflow: hidden;
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+}
+
+.manage-access-tab__img img {
+  width: 100%;
+}
+
+.manage-access-tab__btn-group button {
+  margin: 5px 0px;
+  display: block;
+  padding: 3px 0px;
+  width: 110px;
+  border: 0px;
+  border-radius: 5px;
+}
+
+.manage-access-tab__btn-group button:active, .manage-access-tab__btn-group button:active {
+  outline: none;
+  border: 0px;
+}
+
+.manage-access-tab__btn-group button:first-of-type {
+  background-color: #003cff;
+  color: white;
+}
+
+.manage-access-tab__btn-group button:last-of-type {
+  color: black;
+  border: 1px solid lightgray;
+}
+
+.manage-access-tab__text-grey {
+  color: grey;
+}
+/*# sourceMappingURL=manage-access-tab.css.map */

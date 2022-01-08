@@ -1,0 +1,11 @@
+{
+    "version": 3,
+    "mappings": "AAGA,AAAA,qBAAqB,CAAA;EACjB,OAAO,EAAC,QAAQ;CAgBnB;;AAjBD,AAEI,qBAFiB,CAEjB,CAAC,CAAA;EACG,KAAK,EELP,OAAe;CFMhB;;AACA,AAAD,2BAAO,CAAA;EACH,OAAO,EAAC,QAAQ;EAChB,aAAa,EAAE,mBAAmB;CACrC;;AACA,AAAD,4BAAQ,CAAA;EACJ,MAAM,EAAC,OAAO;ECqBlB,OAAO,EAAE,IAAI;EAET,cAAc,EDtBM,GAAG;ECyBvB,eAAe,EDzBS,UAAU;EC4BlC,WAAW,ED5BwB,MAAM;CAK5C;;AAPA,AAGG,4BAHI,CAGJ,KAAK,CAAA;EACD,WAAW,EAAE,IAAI;EACjB,WAAW,EAAE,GAAG;CACnB",
+    "sources": [
+        "../../src/scss/theme/components/settings-template/privacy-and-security-tab.scss",
+        "../../src/scss/theme/_mixins.scss",
+        "../../src/scss/theme/_variables.scss"
+    ],
+    "names": [],
+    "file": "privacy-and-security-tab.css"
+}
