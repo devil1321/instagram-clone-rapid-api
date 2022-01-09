@@ -507,6 +507,10 @@ input[type="radio"]:checked {
           align-items: center;
 }
 
+.navbar a {
+  color: black;
+}
+
 .navbar h1 {
   font-family: 'Billabong';
   font-size: 35px;
@@ -1665,6 +1669,54 @@ input[type="radio"]:checked {
   overflow-y: scroll;
 }
 
+.footer {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.footer__links {
+  margin-top: 40px;
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.footer__links a {
+  margin: 5px 0px;
+  font-size: 0.75rem;
+  color: grey;
+}
+
+.footer__foot {
+  font-size: 0.75rem;
+  color: grey;
+}
+
 .home {
   padding: 0px 200px;
   display: -webkit-box;
@@ -1851,42 +1903,11 @@ input[type="radio"]:checked {
   color: #003cff;
 }
 
-.home__profile-links {
-  margin-top: 40px;
-  width: 80%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-}
-
-.home__profile-links a {
-  margin: 5px 0px;
-  font-size: 0.75rem;
-  color: grey;
-}
-
 .home__dot {
   margin: 0px 3px;
   height: 2px;
   width: 2px;
   border-radius: 100%;
   background-color: grey;
-}
-
-.home__profile-footer {
-  font-size: 0.75rem;
-  color: grey;
 }
 /*# sourceMappingURL=home.css.map */

@@ -10,6 +10,6 @@ export const keys:Keys = {
         },
         session:{
             cookieKey:'asdsakjdldjsahfjfajdsakjfdksaljf0pdsajwefmndsmfbuhjweguyiqfkf',
-            sessionKey:'61d059c02c60e0d1b4e3666a'
+            sessionKey:'61dad09a2c60e0d1b4e366c0'
         } 
     }

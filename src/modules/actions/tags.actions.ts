@@ -2,11 +2,12 @@ import axios from 'axios'
 import { keys } from '../../config/keys';
 
 class IG_TAGS_ACTIONS{
-
+    public allTagPosts: any[];
     public tagPosts:any;
     public tag:any;
 
     constructor(){
+        this.allTagPosts = []
         this.tagPosts = {}
         this.tag = {}
     }
@@ -15,7 +16,7 @@ class IG_TAGS_ACTIONS{
         var options:any = {
             method: 'GET',
             url: 'https://instagram-unofficial.p.rapidapi.com/tag-posts',
-            params: {session_key: global.session_key, tag: tag,max_id:max_id},
+            params: {session_key: keys.session.sessionKey, tag: tag,max_id:max_id},
             headers: {
                 'x-rapidapi-host': keys.rapidAPI.host,
                 'x-rapidapi-key': keys.rapidAPI.key

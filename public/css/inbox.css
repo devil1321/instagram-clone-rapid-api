@@ -567,6 +567,10 @@ input[type="radio"]:checked {
           align-items: center;
 }
 
+.navbar a {
+  color: black;
+}
+
 .navbar h1 {
   font-family: 'Billabong';
   font-size: 35px;

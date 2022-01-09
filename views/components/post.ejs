@@ -1,18 +1,23 @@
 <div class="post">
     <div class="post__header">
         <a href="#">
-            <div class="post__profile-img" style="background-image:url('<%= url %>')">
+            <div class="post__profile-img" style="background-image:url('<%- post.user.profile_pic_url %>')">
             
             </div>
         </a>
         <svg class="svg__dots-icon" aria-label="More options" class="_8-yf5 " color="#262626" fill="#262626" height="24" role="img" viewBox="0 0 24 24" width="24"><circle cx="12" cy="12" r="1.5"></circle><circle cx="6" cy="12" r="1.5"></circle><circle cx="18" cy="12" r="1.5"></circle></svg>
     </div>
-    <div class="post__profile-img">
+    <div class="post__profile-img" style="background-image:url('<%- post.user.profile_pic_url %>')">
        
     </div>
-    <div class="post__img">
-        <img src="/public/assets/temp_post_image.jpg" alt="">
-    </div>
+    <% if(post.user.video_versions){ %>
+        <video src="<%- post.video_versions[0].url %>" class="post__img"></video>
+    <% } else if(!post.user.video_codec && post.image_versions2) { %>
+        <div class="post__img">
+            <img src="<%- post.image_vesions2.additional_candidates.first_frame.url %>" alt="">
+        </div>
+    <% } %>
+ 
     <div class="post__info">
         <div class="post__info-nav">
             <div class="post__info-left-icons-group">
@@ -22,9 +27,9 @@
             </div>
             <svg class="svg__pin-icon" aria-label="Save" class="_8-yf5 " color="#262626" fill="#262626" height="24" role="img" viewBox="0 0 24 24" width="24"><polygon fill="none" points="20 21 12 13.44 4 21 4 3 20 3 20 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></polygon></svg>
         </div>
-        <h3>65,675 likes</h3>
+        <h3><%= post.like_count %> likes</h3>
         <div class="post__content-wrapper">
-            <p class="post__content close" id="post__content-<%= id %>" ><span>natgeo</span>Photo by <a href="#"><a href="#">@williamodaniels</a></a> | Bangui, Central African Republic, 2014. Chaibou Mahamat, 33, is seen in his looted home in the 5 Kilo neighborhood. After militia fighters attacked his family, his wife and child left for Cameroon, but he had not had any contact with them. His brother left too, and was later killed by the same militia, the Anti-balakas. The country has been affected by sectarian violence since 2013, through militias such as the Anti-balaka (mostly Christian) and the Seleka (mostly Muslim). I've traveled there a dozen times to report on the war, where atrocities have been committed by both sides. Follow me on <a href="#">@williamodaniels</a> for more human stories around the world. </p>
+            <p class="post__content close" id="post__content-<%= id %>" ><span><%= post.user.username %></span><%- post.caption.text %></p>
             <span class="post__more-info"  data-id="<%= id %>">more</span>
         </div>
         <p class="post__comments-btn" data-id="<%= id %>">View all 495 comments</p>

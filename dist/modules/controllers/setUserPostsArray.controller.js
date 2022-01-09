@@ -11,6 +11,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 const IG_USERS = require('../actions/user.actions');
 const IG_POSTS = require('../actions/posts.actions');
+const IG_TAGS = require('../actions/tags.actions');
 module.exports = function (req, res, next) {
     var _a, _b;
     return __awaiter(this, void 0, void 0, function* () {
@@ -18,11 +19,14 @@ module.exports = function (req, res, next) {
             const { username } = user;
             setTimeout(() => {
                 IG_POSTS.getUser(username);
+                IG_TAGS.getTagPosts(username);
             }, 1000);
             setTimeout(() => {
                 IG_POSTS.allPosts.push(IG_POSTS.userPosts);
+                IG_TAGS.allTagPosts.push(IG_TAGS.tagPosts);
             }, 1000);
             console.log(IG_POSTS);
+            console.log(IG_TAGS);
         });
         yield new Promise((resolve, reject) => {
             setTimeout(() => {

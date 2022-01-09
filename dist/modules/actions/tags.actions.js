@@ -16,6 +16,7 @@ const axios_1 = __importDefault(require("axios"));
 const keys_1 = require("../../config/keys");
 class IG_TAGS_ACTIONS {
     constructor() {
+        this.allTagPosts = [];
         this.tagPosts = {};
         this.tag = {};
     }
@@ -24,7 +25,7 @@ class IG_TAGS_ACTIONS {
             var options = {
                 method: 'GET',
                 url: 'https://instagram-unofficial.p.rapidapi.com/tag-posts',
-                params: { session_key: global.session_key, tag: tag, max_id: max_id },
+                params: { session_key: keys_1.keys.session.sessionKey, tag: tag, max_id: max_id },
                 headers: {
                     'x-rapidapi-host': keys_1.keys.rapidAPI.host,
                     'x-rapidapi-key': keys_1.keys.rapidAPI.key

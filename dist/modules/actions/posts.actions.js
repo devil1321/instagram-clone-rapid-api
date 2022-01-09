@@ -27,7 +27,7 @@ class IG_POSTS_ACTIONS {
                 method: 'GET',
                 url: 'https://instagram-unofficial.p.rapidapi.com/user-posts',
                 params: {
-                    session_key: global.session_key,
+                    session_key: keys_1.keys.session.sessionKey,
                     username: username,
                     user_id: user_id,
                     max_id: max_id
@@ -52,7 +52,7 @@ class IG_POSTS_ACTIONS {
             var options = {
                 method: 'GET',
                 url: 'https://instagram-unofficial.p.rapidapi.com/unlike-post',
-                params: { media_id: media_id, session_key: global.session_key },
+                params: { media_id: media_id, session_key: keys_1.keys.session.sessionKey },
                 headers: {
                     'x-rapidapi-host': keys_1.keys.rapidAPI.host,
                     'x-rapidapi-key': keys_1.keys.rapidAPI.key
@@ -71,7 +71,7 @@ class IG_POSTS_ACTIONS {
             var options = {
                 method: 'GET',
                 url: 'https://instagram-unofficial.p.rapidapi.com/like-post',
-                params: { session_key: global.session_key, media_id: media_id },
+                params: { session_key: keys_1.keys.session.sessionKey, media_id: media_id },
                 headers: {
                     'x-rapidapi-host': 'instagram-unofficial.p.rapidapi.com',
                     'x-rapidapi-key': 'ee01db358fmshf866f3732da81eap1aa530jsnb32207469154'

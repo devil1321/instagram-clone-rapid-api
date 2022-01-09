@@ -50,21 +50,17 @@
                             <i class="fas fa-chevron-right fa-1x"></i>
                         </div>                    
                     </div>
-                    <% for(let i = 0; i < 10; i++){%>
-                        <%- include('components/post',{
-                            id:i,
-                            url:"/public/assets/temp-profile.jpg"}) 
-                        %>
-                    <%}%>
+          
                 </div>
                 <div class="home__profile">
                     <div class="home__profile-header">
                         <div class="home__profile-img-main">
-                            <img src="/public/assets/temp-profile-img.jpg" alt="">
+                           
+                            <img src="<%- user.profile_pic_url %>" alt="">
                         </div>
                         <div class="home__profile-info">
-                            <h3>devil2671321</h3>
-                            <p>Dominik Stepien</p>
+                            <h3><%= user.username %></h3>
+                            <p><%= user.full_name %></p>
                         </div>
                         <span class="font-bold">Switch</span>
                     </div>
@@ -77,30 +73,7 @@
                             <%- include('components/suggestion',{ url:"/public/assets/temp-profile.jpg" }) %>
                         <%}%>
                     </div>
-                    <div class="home__profile-links">
-                        <a href="#">About</a>
-                        <div class="home__dot"></div>
-                        <a href="#">Help</a>
-                        <div class="home__dot"></div>
-                        <a href="#">Press</a>
-                        <div class="home__dot"></div>
-                        <a href="#">API</a>
-                        <div class="home__dot"></div>
-                        <a href="#">Jobs</a>
-                        <div class="home__dot"></div>
-                        <a href="#">Privacy</a>
-                        <div class="home__dot"></div>
-                        <a href="#">Terms</a>
-                        <div class="home__dot"></div>
-                        <a href="#">Locations</a>
-                        <div class="home__dot"></div>
-                        <a href="#">Top Accounts</a>
-                        <div class="home__dot"></div>
-                        <a href="#">Hashtags</a>
-                        <div class="home__dot"></div>
-                        <a href="#">Language</a>
-                    </div>
-                    <p class="home__profile-footer">&copy; 2021 INSTAGRAM FROM META</p>
+                   <%- include('components/footer') %>
                 </div>
             </div>
         </div>

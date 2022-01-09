@@ -10,6 +10,9 @@
     background-color: white;
     box-shadow: 0px 0px 1px black;
     @include createFlex(row,space-between,center,null);
+    a{
+        color:black;
+    }
     h1{
         font-family:'Billabong';
         font-size:35px;

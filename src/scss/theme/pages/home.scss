@@ -8,6 +8,7 @@
 @import '../components/add-post-modal';
 @import '../components/switch-accounts-modal';
 @import '../components/send-modal';
+@import '../components/footer';
 
 .home{
   
@@ -114,17 +115,6 @@
             color:$blue;
         }
     }
-    
-    &__profile-links{
-        margin-top: 40px;
-        width: 80%;
-        @include createFlex(row,flex-start,center,wrap);
-        a{
-            margin:5px 0px;
-            font-size: pxToRem(12);
-            color:grey;
-        }
-    }
     &__dot{
         margin:0px 3px;
         height:2px;
@@ -132,9 +122,4 @@
         border-radius: 100%;
         background-color: grey;
     }
-    &__profile-footer{
-        font-size: pxToRem(12);
-        color:grey;
-    }
-
 }

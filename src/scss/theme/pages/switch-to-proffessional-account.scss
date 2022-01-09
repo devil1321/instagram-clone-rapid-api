@@ -1,0 +1,61 @@
+@import '../global';
+@import '../components/navbar';
+@import '../components/add-post-modal';
+@import '../components/switch-accounts-modal';
+@import '../components/footer';
+.footer{
+    a{
+        display: block;
+        margin:5px 10px;
+    }
+}
+.proffessional-account{
+    margin-top:1px;
+    h1{
+        padding:30px 20px 0px; 
+        text-align: center;
+        font-weight:300;
+    }
+    &__article{
+        box-sizing: border-box;
+        width: 45%;
+        margin:0px auto;
+        border:1px solid lightgrey;
+        border-radius: 5px;
+        background-color: white;
+    }
+    &__item{
+        padding:0px 20px;
+        margin-bottom: 10px;
+        @include createFlex(column,center,center,null);
+        input{
+            margin-left: auto;
+        }
+        h2,p{
+            margin:5px 0px;
+        }
+        p{
+            color:grey;
+        }
+    }
+    &__icon{
+        margin-bottom:20px;
+        padding:25px 28px;
+        border:1px solid lightgrey;
+        border-radius: 100%;
+    }
+    &__footer{
+        padding:20px;
+        border-top:1px solid lightgrey;
+        button{
+            display: block;
+            margin-left: auto;
+            padding:15px 20px;
+            color:white;
+            font-weight: bold;
+            background-color: $sky-blue;
+            border:0px;
+            border-radius:5px;
+        }
+    }
+}

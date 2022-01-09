@@ -50,7 +50,7 @@ class IG_USERS_ACTIONS {
                 method: 'GET',
                 url: 'https://instagram-unofficial.p.rapidapi.com/user-followers',
                 params: {
-                    session_key: global.session_key,
+                    session_key: keys_1.keys.session.sessionKey,
                     username: username,
                     user_id: user_id,
                     max_id: max_id
@@ -108,7 +108,7 @@ class IG_USERS_ACTIONS {
                     console.log(response.data.error);
                 }
                 else {
-                    //   global.session_key = response.data.session_key
+                    //   keys.session.sessionKey = response.data.session_key
                     global.session_key = keys_1.keys.session.sessionKey;
                 }
             }).catch(function (error) {
@@ -121,7 +121,7 @@ class IG_USERS_ACTIONS {
             var options = {
                 method: 'GET',
                 url: 'https://instagram-unofficial.p.rapidapi.com/follow',
-                params: { session_key: global.session_key },
+                params: { session_key: keys_1.keys.session.sessionKey },
                 headers: {
                     'x-rapidapi-host': keys_1.keys.rapidAPI.host,
                     'x-rapidapi-key': keys_1.keys.rapidAPI.key
@@ -140,7 +140,7 @@ class IG_USERS_ACTIONS {
             var options = {
                 method: 'GET',
                 url: 'https://instagram-unofficial.p.rapidapi.com/unfollow',
-                params: { session_key: global.session_key },
+                params: { session_key: keys_1.keys.session.sessionKey },
                 headers: {
                     'x-rapidapi-host': keys_1.keys.rapidAPI.host,
                     'x-rapidapi-key': keys_1.keys.rapidAPI.key

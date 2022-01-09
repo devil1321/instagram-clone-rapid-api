@@ -1,0 +1,18 @@
+.footer{
+    width: 100%;
+    @include createFlex(column,center,center,null);
+    &__links{
+        margin-top: 40px;
+        width: 80%;
+        @include createFlex(row,center,center,wrap);
+        a{
+            margin:5px 0px;
+            font-size: pxToRem(12);
+            color:grey;
+        }
+    }
+    &__foot{
+        font-size: pxToRem(12);
+        color:grey;
+    }   
+}
